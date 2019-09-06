@@ -1,0 +1,24 @@
+.menu_wrapper{
+    display: grid;
+    margin: 0 auto;
+    width: 100vw;
+    height: 20vh;
+
+    grid-template-areas: "logo nav controls";
+    grid-template-columns: 10fr 10fr 10fr;
+}
+
+.menu_wrapper_logo{
+    grid-area: logo;
+    background-color: gray;
+}
+
+.menu_wrapper_nav{
+    grid-area: nav;
+    background-color: green;
+}
+
+.menu_wrapper_controls{
+    grid-area: controls;
+    background-color: red;
+}
