@@ -1,11 +1,13 @@
 import {applyMiddleware, combineReducers, createStore} from "redux";
-import {menuReducer} from './menuReducer';
 import thunkMiddleware from 'redux-thunk';
+import {appBarReducer} from "./appBarReducer";
 
 let reducers = combineReducers({
-   menuPage: menuReducer
+    appBar: appBarReducer
 });
 
 let store = createStore(reducers, applyMiddleware(thunkMiddleware));
+
+window.store = store;
 
 export default store;
