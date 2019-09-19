@@ -3,21 +3,13 @@ import {Drawer, Hidden} from "@material-ui/core/es/index";
 import MenuIcon from '@material-ui/icons/Menu';
 import SideMenu from "./SideMenu";
 import {
-    IconButton, makeStyles
+    IconButton
 } from "@material-ui/core";
-
-let styleForSideButton = makeStyles(theme => ({
-    menuButton: {
-        marginRight: theme.spacing(2),
-        [theme.breakpoints.up('md')]: {
-            display: 'none',
-        },
-    },
-}));
+import {styleForSideButton} from "./SideMenuStyle";
 
 let SideButton = (props) => {
     const {container} = props;
-    const classes = styleForSideButton();
+    const styleFor = styleForSideButton();
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
     let handleDrawerToggle = () => {
@@ -31,11 +23,11 @@ let SideButton = (props) => {
                 aria-label="open drawer"
                 edge="end"
                 onClick={handleDrawerToggle}
-                className={classes.menuButton}
+                className={styleFor.menuButton}
             >
                 <MenuIcon/>
             </IconButton>
-            <nav className={classes.drawer} aria-label="mailbox folders">
+            <nav aria-label="mailbox folders">
                 <Hidden smUp implementation="css">
                     <Drawer
                         container={container}
@@ -43,9 +35,6 @@ let SideButton = (props) => {
                         anchor={'right'}
                         open={mobileOpen}
                         onClose={handleDrawerToggle}
-                        classes={{
-                            paper: classes.drawerPaper,
-                        }}
                         ModalProps={{
                             keepMounted: true, // Better open performance on mobile.
                         }}

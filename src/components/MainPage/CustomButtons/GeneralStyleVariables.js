@@ -4,9 +4,8 @@ import Button from "@material-ui/core/Button/index";
 export const GeneralVariables = {
     'paddingLeft': '20px',
     'paddingRight': '20px',
-    'marginRight': '4px',
-    'marginLeft': '4px',
     'width': 'fit-content',
+    'height': '35px',
     'fontSize': '12px',
     'color': 'white',
     'fontSize16': '1rem',
@@ -33,4 +32,9 @@ export const CustomButton = styled(Button)({
     lineHeight: GeneralVariables.lineHeight,
     textAlign: GeneralVariables.textAlign,
     textTransform: GeneralVariables.textTransform,
+    width: GeneralVariables.width,
+    height: GeneralVariables.height,
+    '@media(max-width: 650px)' : {
+        fontSize: '0'
+    }
 });

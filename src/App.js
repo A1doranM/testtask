@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import AppBarContainer from "./components/MainPage/AppBarContainer";
+import AppBarContainer from "./components/MainPage/ToolBarContainer";
 
 function App() {
   return (

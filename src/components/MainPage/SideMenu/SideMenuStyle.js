@@ -25,3 +25,5 @@ export const styleForSideMenu = makeStyles(theme => ({
         fontSize: 'h6'
     }
 }));
+
+export const styleForSideButton = makeStyles(theme => ({}));

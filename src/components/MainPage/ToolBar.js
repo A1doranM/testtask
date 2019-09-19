@@ -1,9 +1,9 @@
 import React from 'react'
 import {
-   AppBar
+    AppBar
 } from "@material-ui/core";
 import LanguageMenu from "./LanguageMenu/LanguageMenu";
-import {styleForToolbar} from "./AppBarStyle";
+import {styleForToolbar} from "./ToolBarStyle";
 import {NavLink} from "react-router-dom";
 import SideButton from "./SideMenu/SideButton";
 import ButtonSignUp from "./CustomButtons/ButtonsSignUpLogIn/ButtonSignUp";
@@ -24,7 +24,9 @@ let ToolBar = (props) => {
                         <li><NavLink className={styleFor.toolbar_navigation_items_link} to='/'>CONTACTS</NavLink></li>
                     </ul>
                 </div>
-                <LanguageMenu/>
+                <div className={styleFor.toolbar_langMenu}>
+                    <LanguageMenu/>
+                </div>
                 <div className={styleFor.spacerBetweenNavControls}/>
                 <div className={styleFor.toolbar_control_items}>
                     <ul>
@@ -36,7 +38,9 @@ let ToolBar = (props) => {
                         </li>
                     </ul>
                 </div>
-                <SideButton/>
+                <div className={styleFor.toolbar_sideMenuButton}>
+                    <SideButton/>
+                </div>
             </nav>
         </AppBar>
     )

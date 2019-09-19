@@ -1,7 +1,7 @@
 import React from 'react';
 import LanguageIcon from '@material-ui/icons/Language';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import {LanguageButton, LanguageDropDownMenu, LanguageMenuItem} from "./LanguageMenuStyles";
+import {LanguageButton, LanguageDropDownMenu, LanguageMenuItem, styleForLanguageMenu} from "./LanguageMenuStyles";
 
 
 export default function LanguageMenu(props) {
@@ -14,14 +14,6 @@ export default function LanguageMenu(props) {
     function handleClose(e) {
         setAnchorEl(null);
     }
-
-    // let languages = props.languages.submenu.map((language) => {
-    //     return <MenuItem key={language.id}
-    //                      onClick={handleClose}
-    //                      value={language.id}
-    //                      className={classes.menuItem}
-    //     >{language.title}</MenuItem>
-    // });
 
     return (
         <div>

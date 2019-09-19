@@ -6,8 +6,6 @@ import PersonAddIcon from '@material-ui/icons/PersonAdd';
 
 const LocalVariables = {
     'marginRight': '3px',
-    'height': '35px',
-    'width': '110px',
     'backgroundColor': 'transparent',
     'borderRadius': '0.3',
     'boxShadow': 'inset 0 0 0 1px white',
@@ -18,12 +16,10 @@ const SignUp = styled(CustomButton)({
     background: LocalVariables.backgroundColor,
     borderRadius: `${LocalVariables.borderRadius}rem`,
     boxShadow: LocalVariables.boxShadow,
-    height: LocalVariables.height,
-    width: LocalVariables.width,
     '&:hover': {
         boxShadow: LocalVariables.boxShadow,
         background: 'transparent'
-    }
+    },
 });
 
 let ButtonSignUp = (props) => {
