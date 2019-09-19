@@ -13,15 +13,6 @@ let SideMenu = (props) => {
         setOpen(!open);
     }
 
-    // function handleClick(event) {
-    //     setAnchorEl(event.currentTarget);
-    //     setIsOpenInnerMenu(!isOpenInnerMenu);
-    // }
-    //
-    // function handleClose() {
-    //     setAnchorEl(null);
-    // }
-
     return (
         <div>
             <div>

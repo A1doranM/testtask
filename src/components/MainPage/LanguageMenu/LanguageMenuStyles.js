@@ -16,5 +16,5 @@ export const LanguageDropDownMenu = styled(Menu)({
 export const LanguageMenuItem = styled(MenuItem)({
     textAlign: 'center',
     display: 'block',
-    'width': '75px',
+    width: '75px',
 });

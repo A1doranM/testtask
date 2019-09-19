@@ -5,11 +5,9 @@ import SideMenu from "./SideMenu";
 import {
     IconButton
 } from "@material-ui/core";
-import {styleForSideButton} from "./SideMenuStyle";
 
 let SideButton = (props) => {
     const {container} = props;
-    const styleFor = styleForSideButton();
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
     let handleDrawerToggle = () => {
@@ -23,7 +21,6 @@ let SideButton = (props) => {
                 aria-label="open drawer"
                 edge="end"
                 onClick={handleDrawerToggle}
-                className={styleFor.menuButton}
             >
                 <MenuIcon/>
             </IconButton>
@@ -36,7 +33,7 @@ let SideButton = (props) => {
                         open={mobileOpen}
                         onClose={handleDrawerToggle}
                         ModalProps={{
-                            keepMounted: true, // Better open performance on mobile.
+                            keepMounted: true,
                         }}
                     >
                         <SideMenu {...props} handleDrawerToggle={handleDrawerToggle}/>

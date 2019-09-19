@@ -61,6 +61,12 @@ export const styleForToolbar = makeStyles(theme => ({
 
     },
 
+    //LANGUAGES
+
+    toolbar_langMenu: {
+        marginLeft: '15px'
+    },
+
     //LOGO
 
     toolbar_logo: {
