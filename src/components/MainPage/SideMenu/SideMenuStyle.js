@@ -9,21 +9,34 @@ export const CloseMenuButton = styled(CloseIcon)({
 
 export const styleForSideMenu = makeStyles(theme => ({
     sideMenu_header: {
-        width:'280px',
-        height:'65px',
+        display: 'flex',
+        alignItems: 'center',
+        width: '280px',
+        height: '65px',
         backgroundColor: '#e1ebee',
     },
-    innerMenu_expandMoreIcon: {
-      marginLeft: '110px'
+    sideMenu_userName: {
+        width: '240px',
+        paddingLeft: '5px',
+        fontFamily: 'Roboto',
+        fontStyle: 'normal',
+        fontWeight: 'normal',
+        fontSize: '20px',
+        color: 'black',
     },
-    innerMenu_text:{
+    sideMenu_close:{
+    },
+    innerMenu_expandMoreIcon: {
+        marginLeft: '110px'
+    },
+    innerMenu_text: {
         marginLeft: '5px',
         fontSize: 'h6'
     },
-    innerMenu_item:{
+    innerMenu_item: {
         marginLeft: '40px',
         fontSize: 'h6'
-    }
+    },
 }));
 
 export const styleForSideButton = makeStyles(theme => ({}));

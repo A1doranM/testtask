@@ -8,8 +8,15 @@ export const styleForToolbar = makeStyles(theme => ({
         width: '100%',
         top: '0',
         left: '0',
-        height: '65px',
+        height: '120px',
         background: 'linear-gradient(45deg, #478292 30%, #095e72 90%)',
+        fontFamily: 'Roboto',
+        fontStyle: 'normal',
+        fontWeight: 'normal',
+        fontSize: '15px',
+        lineHeight: '16px',
+        textTransform: 'uppercase',
+
     },
 
     // NAVIGATION
@@ -17,10 +24,9 @@ export const styleForToolbar = makeStyles(theme => ({
     toolbar_navigation: {
         display: 'flex',
         height: '100%',
-        width: '1140px',
+        width: '1440px',
         marginLeft: 'auto',
         marginRight: 'auto',
-        justifyContent: 'space-between',
         alignItems: 'center',
         alignContent: 'center',
         '& ul': {
@@ -39,7 +45,7 @@ export const styleForToolbar = makeStyles(theme => ({
     },
 
     toolbar_navigation_items_link: {
-        color: 'DarkGray',
+        color: '#85ADB6',
         textDecoration: 'none',
 
         '&:hover': {
@@ -50,12 +56,11 @@ export const styleForToolbar = makeStyles(theme => ({
         },
     },
 
-    // CONTROLS
+    // LISTS
 
-    toolbar_control_items: {
-        fontWeight: '1000',
+    toolbar_list_items: {
         '& li': {
-            margin: '3px',
+            margin: '10px',
             padding: '0',
         },
 
@@ -71,33 +76,49 @@ export const styleForToolbar = makeStyles(theme => ({
 
     toolbar_logo: {
         marginLeft: '15px',
-        '& a': {
-            color: 'white',
-            textDecoration: 'none',
-            fontSize: '1.5rem',
-        }
+    },
+
+    //ICONS
+
+    toolbar_tracker_items_Icons: {
+        marginLeft: '3px',
+        fontSize: '20px',
+    },
+
+    toolbar_control_items_Icons: {
+        fontSize: '30px',
+    },
+
+    toolbar_list_items_Icons: {
+        color: '#85ADB6',
     },
 
     //SPACERS
 
-    spacerBetweenLogoNav: {
-        flex: '0.5',
+    toolbar_navigation_spacerBetweenLogoNavList: {
+        flex: '0.3',
     },
-    spacerBetweenNavControls: {
-        flex: '0.5',
+    toolbar_navigation_spacerBetweenListLanguages: {
+        flex: '0.2',
+    },
+
+    //SIDE MENU
+
+    toolbar_sideMenuButton:{
+        marginLeft: '10px'
     },
 
     //RESPONSIVE
 
-    [theme.breakpoints.up('lg')] : {
+    [theme.breakpoints.up('lg')]: {
         toolbar_sideMenuButton: {
             display: 'none',
         }
     },
 
-    [theme.breakpoints.down('md')] : {
+    [theme.breakpoints.down('md')]: {
         //FOR NAVIGATION
-        toolbar_navigation:{
+        toolbar_navigation: {
             width: '940px',
         },
         toolbar_navigation_items: {
@@ -110,12 +131,12 @@ export const styleForToolbar = makeStyles(theme => ({
         },
 
         //FOR LANGUAGE MENU
-        toolbar_langMenu:{
-          margin: '3px',
+        toolbar_langMenu: {
+            margin: '3px',
         },
 
         //FOR SPACERS
-        spacerBetweenLogoNav: {
+        toolbar_navigation_spacerBetweenLogoNavList: {
             flex: '1',
         },
         spacerBetweenNavControls: {
@@ -123,13 +144,13 @@ export const styleForToolbar = makeStyles(theme => ({
         }
     },
 
-    [theme.breakpoints.down('sm')] : {
+    [theme.breakpoints.down('sm')]: {
         toolbar_navigation: {
             width: '720px',
         }
     },
 
-    '@media(max-width: 720px)' : {
+    '@media(max-width: 720px)': {
         toolbar_navigation: {
             width: '100vw',
         },

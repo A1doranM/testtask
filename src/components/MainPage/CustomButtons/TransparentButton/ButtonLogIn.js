@@ -1,36 +1,32 @@
 import React from 'react';
 import {styled} from '@material-ui/styles';
 import 'typeface-roboto';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import {CustomButton} from "../GeneralStyleVariables";
-import PersonAddIcon from '@material-ui/icons/PersonAdd';
 
 const LocalVariables = {
     'marginRight': '3px',
-    'backgroundColor': 'transparent',
+    'backgroundColor': '#eca347',
     'borderRadius': '0.3',
-    'boxShadow': 'inset 0 0 0 1px white',
     'zIndex_0': '0',
 };
 
-const SignUp = styled(CustomButton)({
+const LogIn = styled(CustomButton)({
     background: LocalVariables.backgroundColor,
     borderRadius: `${LocalVariables.borderRadius}rem`,
-    boxShadow: LocalVariables.boxShadow,
     '&:hover': {
-        boxShadow: LocalVariables.boxShadow,
-        background: 'transparent'
+        backgroundColor: LocalVariables.backgroundColor
     },
 });
-
-let ButtonSignUp = (props) => {
+let ButtonLogIn = (props) => {
     return (
-        <SignUp
+        <LogIn
             variant="contained"
             type="submit"
         >
-            <PersonAddIcon fontSize='small'/> {props.children}
-        </SignUp>
+            <ExitToAppIcon fontSize='small'/> {props.children}
+        </LogIn>
     )
 };
 
-export default ButtonSignUp;
+export default ButtonLogIn

@@ -1,11 +1,12 @@
 import React from 'react';
-import LanguageIcon from '@material-ui/icons/Language';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import language from '../../../assets/images/language_menu/languages.svg';
+import arrow from '../../../assets/images/language_menu/arrow.svg';
 import {LanguageButton, LanguageDropDownMenu, LanguageMenuItem, styleForLanguageMenu} from "./LanguageMenuStyles";
 
 
 export default function LanguageMenu(props) {
     const [anchorEl, setAnchorEl] = React.useState(null);
+    const styleFor = styleForLanguageMenu();
 
     function handleClick(event) {
         setAnchorEl(event.currentTarget);
@@ -18,9 +19,9 @@ export default function LanguageMenu(props) {
     return (
         <div>
             <LanguageButton aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-                <LanguageIcon color='action' className='langIcon'/>
-                EN
-                <ExpandMoreIcon color='action' fontSize='small'/>
+                <img src={language}/>
+                <span className={styleFor.languageMenu_text}>EN</span>
+                <img src={arrow}/>
             </LanguageButton>
             <LanguageDropDownMenu
                 id="simple-menu"
