@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import {initToolBarThunkCreator, switchCurrentLanguageThunkCreator} from "../../redux/toolBarReducer";
 
 class ToolBarContainer extends React.Component {
+
     componentDidMount() {
         this.props.initToolBar();
     }
@@ -16,6 +17,7 @@ class ToolBarContainer extends React.Component {
                      signUpButton={this.props.signUpButton}
                      logInButton={this.props.logInButton}
                      switchCurrentLanguage={this.props.switchCurrentLanguage}
+                     scrolledToolbar={this.props.scrolledToolbar}
             />
         )
     }

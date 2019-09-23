@@ -1,10 +1,10 @@
 import React from 'react';
-import {CloseMenuButton, styleForSideMenu} from "./SideMenuStyle";
+import {styleForSideMenu} from "./SideMenuStyle";
 import {Collapse, List, ListItem, ListItemIcon, Typography} from "@material-ui/core/es/index";
 import MenuIcon from '@material-ui/icons/Menu';
 import ExpandLess from "@material-ui/icons/esm/ExpandLess";
 import ExpandMore from "@material-ui/icons/esm/ExpandMore";
-import closeIcon from '../../../assets/images/side_menu/x.svg';
+import closeIcon from '../../../assets/images/sideMenu/x.svg';
 
 let SideMenu = (props) => {
     const styleFor = styleForSideMenu();
@@ -21,6 +21,7 @@ let SideMenu = (props) => {
                 <img src={closeIcon}
                      onClick={props.handleDrawerToggle}
                      className={styleFor.sideMenu_close}
+                     alt={'user name'}
                 />
             </div>
             <div>

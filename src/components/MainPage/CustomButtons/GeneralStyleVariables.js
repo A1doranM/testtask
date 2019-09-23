@@ -28,7 +28,6 @@ export const CustomButton = styled(Button)({
     paddingRight: GeneralVariables.paddingRight,
     marginRight: GeneralVariables.marginRight,
     color: GeneralVariables.color,
-    minWidth: GeneralVariables.minWidth,
     textAlign: GeneralVariables.textAlign,
     width: GeneralVariables.width,
     height: GeneralVariables.height,
@@ -41,7 +40,7 @@ export const CustomButton = styled(Button)({
     border: GeneralVariables.border,
     boxSizing: GeneralVariables.boxSizing,
     borderRadius: GeneralVariables.borderRadius,
-    '@media(max-width: 650px)' : {
+    '@media(max-width: 960px)' : {
         fontSize: '0'
     }
 });

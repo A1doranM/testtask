@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
-import AppBarContainer from "./components/MainPage/ToolBarContainer";
+import ToolBarContainer from "./components/MainPage/ToolBarContainer";
 
 function App() {
   return (
     <div className="App">
-      <AppBarContainer/>
+      <ToolBarContainer/>
+        <div style={{color: 'red'}}>CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT</div>
     </div>
   );
 }

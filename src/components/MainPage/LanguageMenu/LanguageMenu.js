@@ -1,6 +1,6 @@
 import React from 'react';
-import language from '../../../assets/images/language_menu/languages.svg';
-import arrow from '../../../assets/images/language_menu/arrow.svg';
+import language from '../../../assets/images/languageMenu/languages.svg';
+import arrow from '../../../assets/images/languageMenu/arrow.svg';
 import {LanguageButton, LanguageDropDownMenu, LanguageMenuItem, styleForLanguageMenu} from "./LanguageMenuStyles";
 
 
@@ -19,9 +19,9 @@ export default function LanguageMenu(props) {
     return (
         <div>
             <LanguageButton aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-                <img src={language}/>
+                <img src={language} alt={'language'}/>
                 <span className={styleFor.languageMenu_text}>EN</span>
-                <img src={arrow}/>
+                <img src={arrow} alt={'arrow'}/>
             </LanguageButton>
             <LanguageDropDownMenu
                 id="simple-menu"

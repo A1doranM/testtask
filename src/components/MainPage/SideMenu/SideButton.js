@@ -1,8 +1,7 @@
 import React from 'react'
 import {Drawer, Hidden} from "@material-ui/core/es/index";
 import SideMenu from "./SideMenu";
-import sideMenuButton from '../../../assets/images/side_menu/burger.svg';
-import {styleForSideButton} from "./SideMenuStyle";
+import sideMenuButton from '../../../assets/images/sideMenu/burger.svg';
 
 let SideButton = (props) => {
     const {container} = props;
@@ -14,7 +13,7 @@ let SideButton = (props) => {
 
     return (
         <div>
-            <img src={sideMenuButton} onClick={handleDrawerToggle}/>
+            <img src={sideMenuButton} alt={'side button'} onClick={handleDrawerToggle}/>
             <nav aria-label="mailbox folders">
                 <Hidden smUp implementation="css">
                     <Drawer

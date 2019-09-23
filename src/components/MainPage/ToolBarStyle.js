@@ -2,21 +2,29 @@ import {
     makeStyles
 } from "@material-ui/core";
 
-export const styleForToolbar = makeStyles(theme => ({
-    toolbar: {
-        position: 'fixed',
-        width: '100%',
-        top: '0',
-        left: '0',
-        height: '120px',
-        background: 'linear-gradient(45deg, #478292 30%, #095e72 90%)',
-        fontFamily: 'Roboto',
-        fontStyle: 'normal',
-        fontWeight: 'normal',
-        fontSize: '15px',
-        lineHeight: '16px',
-        textTransform: 'uppercase',
+let generalStyleForToolbar = {
+    position: 'fixed',
+    width: '100%',
+    top: '0',
+    left: '0',
+    height: '120px',
+    fontFamily: 'Roboto',
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    fontSize: '15px',
+    lineHeight: '16px',
+    textTransform: 'uppercase',
+};
 
+export const styleForToolbar = makeStyles(theme => ({
+    toolbarDefault: {
+        ...generalStyleForToolbar,
+        background: 'linear-gradient(45deg, #478292 30%, #095e72 90%)',
+    },
+
+    toolbarScrolled: {
+        ...generalStyleForToolbar,
+        background: 'transparent',
     },
 
     // NAVIGATION
@@ -104,8 +112,21 @@ export const styleForToolbar = makeStyles(theme => ({
 
     //SIDE MENU
 
-    toolbar_sideMenuButton:{
+    toolbar_sideMenuButton: {
         marginLeft: '10px'
+    },
+
+    //DROP DOWN PAGE
+
+    toolbar_dropDownPage: {
+        position: 'fixed',
+        top: '121px',
+        width: '100%',
+        height: '161px',
+    },
+
+    toolbar_dropDownPageClose: {
+        display: 'none'
     },
 
     //RESPONSIVE

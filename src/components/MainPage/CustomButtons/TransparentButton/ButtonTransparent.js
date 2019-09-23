@@ -27,6 +27,7 @@ const Transparent = styled(CustomButton)({
 let ButtonTransparent = (props) => {
     return (
         <Transparent
+            {...props}
             variant="contained"
             type="submit"
         >

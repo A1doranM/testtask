@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react';
 import {
     AppBar
 } from "@material-ui/core";
@@ -12,14 +12,20 @@ import calc from '../../assets/images/toolbar/calc.svg';
 import logo from '../../assets/images/toolbar/logo.svg';
 import SignInLogIn from '../../assets/images/toolbar/SignInLogIn.svg';
 import {styleForToolbar} from "./ToolBarStyle";
+import DropDownPage from "../DropDownPage/DropDownPage";
 
 let ToolBar = (props) => {
-    const styleFor = styleForToolbar();
+    let styleFor = styleForToolbar();
+    const [DropDownOpen, setDropDownOpen] = React.useState(false);
+
+    let toggleDropDown = (event) => {
+        setDropDownOpen(!DropDownOpen);
+    };
 
     return (
-        <AppBar className={styleFor.toolbar}>
+        <AppBar className={props.scrolledToolbar ? styleFor.toolbarScrolled : styleFor.toolbarDefault}>
             <nav className={styleFor.toolbar_navigation}>
-                <div className={styleFor.toolbar_logo}><img src={logo}/></div>
+                <div className={styleFor.toolbar_logo}><img src={logo} alt={'logo'}/></div>
                 <div className={styleFor.toolbar_navigation_spacerBetweenLogoNavList}/>
                 <div className={styleFor.toolbar_navigation_items}>
                     <ul>
@@ -32,7 +38,7 @@ let ToolBar = (props) => {
                 <div className={styleFor.toolbar_list_items}>
                     <ul>
                         <li>
-                            <ButtonTransparent>
+                            <ButtonTransparent onClick={toggleDropDown}>
                                 SEARCH TRACKER
                                 <SearchIcon className={styleFor.toolbar_tracker_items_Icons}/>
                             </ButtonTransparent>
@@ -52,10 +58,10 @@ let ToolBar = (props) => {
                 <div className={styleFor.toolbar_list_items}>
                     <ul>
                         <li>
-                            <img src={calc} className={styleFor.toolbar_list_items_Icons}/>
+                            <img src={calc} alt={'add'} className={styleFor.toolbar_list_items_Icons}/>
                         </li>
                         <li>
-                            <img src={SignInLogIn} className={styleFor.toolbar_list_items_Icons}/>
+                            <img src={SignInLogIn} alt={'search'} className={styleFor.toolbar_list_items_Icons}/>
                         </li>
                     </ul>
                 </div>
@@ -63,6 +69,12 @@ let ToolBar = (props) => {
                     <SideButton/>
                 </div>
             </nav>
+            {DropDownOpen
+                ? <div className={styleFor.toolbar_dropDownPage} onClick={toggleDropDown}>
+                    <DropDownPage backg={'red'}/>
+                </div>
+                : <div className={styleFor.toolbar_dropDownPageClose}/>
+            }
         </AppBar>
     )
 };
