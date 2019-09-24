@@ -13,26 +13,38 @@ export const LanguageButton = styled(Button)({
 });
 
 export const LanguageDropDownMenu = styled(Menu)({
-    marginTop: '50px',
+    marginTop: '60px',
+    marginLeft: '15px',
 });
 
 export const LanguageMenuItem = styled(MenuItem)({
-    textAlign: 'center',
     display: 'block',
-    width: '75px',
+    width: '55px',
 });
 
 export const styleForLanguageMenu = makeStyles(theme => ({
-        languageMenu_text: {
-            marginLeft: '5px',
-            marginRight: '5px',
-            fontFamily: 'Roboto',
-            fontStyle: 'normal',
-            fontWeight: 'normal',
-            fontSize: '15px',
-            lineHeight: '18px',
-            textTransform: 'uppercase',
-            color: 'white',
-        }
-    }))
-;
+    languageMenu_text: {
+        marginLeft: '5px',
+        marginRight: '5px',
+        fontFamily: 'Roboto',
+        fontStyle: 'normal',
+        fontWeight: 'normal',
+        fontSize: '15px',
+        lineHeight: '18px',
+        textTransform: 'uppercase',
+        color: 'white',
+    },
+    languageMenu_rectangle: {
+        position: 'float',
+        top: '-5px',
+        left: '50%',
+        width: '26.66px',
+        height: '26.66px',
+        background: 'black',
+        transform: 'matrix(0.71, 0.69, -0.73, 0.71, 0, 0)',
+        zIndex: '100',
+    }
+}));
+
+
+

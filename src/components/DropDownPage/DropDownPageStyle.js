@@ -4,19 +4,25 @@ import {
 
 export const styleForDropDownPage = makeStyles(theme => ({
     DropDownPage: {
-        position: 'fixed',
-        top: '121px',
         width: '100%',
-        height: '161px',
-        background: 'black',
+        height: '100%',
+        background: 'red'
     },
+
+    DropDownPage_content: {
+        paddingTop: '26px',
+        width: '100%',
+        height: '91%',
+
+    },
+
     DropDownPage_rectangle: {
-        position: 'fixed',
-        top: '108px',
+        top: '-10px',
         left: '50%',
         width: '26.66px',
         height: '26.66px',
-        background: '#FFFFFF',
+        marginTop: '38px',
+        background: 'white',
         transform: 'matrix(0.71, 0.69, -0.73, 0.71, 0, 0)',
-    }
+    },
 }));

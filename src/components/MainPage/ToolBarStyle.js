@@ -125,14 +125,11 @@ export const styleForToolbar = makeStyles(theme => ({
     //DROP DOWN PAGE
 
     toolbar_dropDownPage: {
-        position: 'fixed',
-        top: '121px',
-        width: '100%',
-        height: '161px',
-    },
-
-    toolbar_dropDownPageClose: {
-        display: 'none'
+        display: 'flex',
+        height: 'fit-content',
+        width: '1440px',
+        marginLeft: 'auto',
+        marginRight: 'auto',
     },
 
     //RESPONSIVE
@@ -187,5 +184,5 @@ export const styleForToolbar = makeStyles(theme => ({
         toolbar_navigation: {
             width: '100vw',
         },
-    }
+    },
 }));

@@ -1,7 +1,4 @@
 import React from 'react';
-import {
-    AppBar
-} from "@material-ui/core";
 import LanguageMenu from "./LanguageMenu/LanguageMenu";
 import {NavLink} from "react-router-dom";
 import SideButton from "./SideMenu/SideButton";
@@ -16,14 +13,22 @@ import DropDownPage from "../DropDownPage/DropDownPage";
 
 let ToolBar = (props) => {
     let styleFor = styleForToolbar();
-    const [DropDownCalcOpen, setDropCalcOpen] = React.useState(false);
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const dropDownPage = React.createRef();
+    const [open, setOpen] = React.useState(false);
 
-    let toggleDropDownCalc = (event) => {
-        setDropCalcOpen(!DropDownCalcOpen);
+    const toggleDropDownPage = event => {
+        setAnchorEl(event.currentTarget);
+        setOpen(true);
+    };
+
+    const closeDropDownPage = () => {
+        setOpen(false);
+        setAnchorEl(null);
     };
 
     return (
-        <AppBar className={props.scrolledToolbar ? styleFor.toolbarScrolled : styleFor.toolbarDefault}>
+        <div className={props.scrolledToolbar ? styleFor.toolbarScrolled : styleFor.toolbarDefault}>
             <nav className={styleFor.toolbar_navigation}>
                 <div className={styleFor.toolbar_logo}><img src={logo} alt={'logo'}/></div>
                 <div className={styleFor.toolbar_navigation_spacerBetweenLogoNavList}/>
@@ -38,13 +43,13 @@ let ToolBar = (props) => {
                 <div className={styleFor.toolbar_trackers_list_items}>
                     <ul>
                         <li>
-                            <ButtonTransparent onClick={toggleDropDownCalc}>
+                            <ButtonTransparent onClick={toggleDropDownPage}>
                                 SEARCH TRACKER
                                 <SearchIcon className={styleFor.toolbar_tracker_items_Icons}/>
                             </ButtonTransparent>
                         </li>
                         <li>
-                            <ButtonTransparent>
+                            <ButtonTransparent onClick={toggleDropDownPage}>
                                 CREATE TRACKER
                                 <AddIcon className={styleFor.toolbar_tracker_items_Icons}/>
                             </ButtonTransparent>
@@ -58,7 +63,7 @@ let ToolBar = (props) => {
                 <div className={styleFor.toolbar_controls_list_items}>
                     <ul>
                         <li>
-                            <img src={calc} alt={'add'} className={styleFor.toolbar_list_items_Icons}/>
+                            <img src={calc} alt={'add'} className={styleFor.toolbar_list_items_Icons} onClick={toggleDropDownPage}/>
                         </li>
                         <li>
                             <img src={SignInLogIn} alt={'search'} className={styleFor.toolbar_list_items_Icons}/>
@@ -69,13 +74,13 @@ let ToolBar = (props) => {
                     <SideButton/>
                 </div>
             </nav>
-            {DropDownCalcOpen
-                ? <div className={styleFor.toolbar_dropDownPage} onClick={toggleDropDownCalc}>
-                    <DropDownPage/>
+            {!open
+                ? <div style={{display: 'none'}}/>
+                : <div ref={dropDownPage} className={styleFor.toolbar_dropDownPage} onClick={closeDropDownPage}>
+                    <DropDownPage anchorEL={anchorEl}/>
                 </div>
-                : <div className={styleFor.toolbar_dropDownPageClose}/>
             }
-        </AppBar>
+        </div>
     )
 };
 
