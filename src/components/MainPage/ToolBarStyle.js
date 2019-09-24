@@ -66,12 +66,18 @@ export const styleForToolbar = makeStyles(theme => ({
 
     // LISTS
 
-    toolbar_list_items: {
+    toolbar_trackers_list_items: {
         '& li': {
             margin: '10px',
             padding: '0',
         },
+    },
 
+    toolbar_controls_list_items: {
+        '& li': {
+            margin: '15px',
+            padding: '0',
+        },
     },
 
     //LANGUAGES
@@ -132,9 +138,10 @@ export const styleForToolbar = makeStyles(theme => ({
     //RESPONSIVE
 
     [theme.breakpoints.up('lg')]: {
+        //FOR SIDE MENU
         toolbar_sideMenuButton: {
             display: 'none',
-        }
+        },
     },
 
     [theme.breakpoints.down('md')]: {
@@ -144,6 +151,11 @@ export const styleForToolbar = makeStyles(theme => ({
         },
         toolbar_navigation_items: {
             display: 'none'
+        },
+
+        //FOR TRACKERS
+        toolbar_trackers_list_items: {
+            display: 'none',
         },
 
         //FOR SIDE MENU

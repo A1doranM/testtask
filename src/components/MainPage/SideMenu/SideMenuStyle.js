@@ -27,7 +27,8 @@ export const styleForSideMenu = makeStyles(theme => ({
     sideMenu_close:{
     },
     innerMenu_expandMoreIcon: {
-        marginLeft: '110px'
+        position: 'absolute',
+        right: '10px'
     },
     innerMenu_text: {
         marginLeft: '5px',

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
     AppBar
 } from "@material-ui/core";
@@ -16,10 +16,10 @@ import DropDownPage from "../DropDownPage/DropDownPage";
 
 let ToolBar = (props) => {
     let styleFor = styleForToolbar();
-    const [DropDownOpen, setDropDownOpen] = React.useState(false);
+    const [DropDownCalcOpen, setDropCalcOpen] = React.useState(false);
 
-    let toggleDropDown = (event) => {
-        setDropDownOpen(!DropDownOpen);
+    let toggleDropDownCalc = (event) => {
+        setDropCalcOpen(!DropDownCalcOpen);
     };
 
     return (
@@ -35,10 +35,10 @@ let ToolBar = (props) => {
                     </ul>
                 </div>
                 <div className={styleFor.toolbar_navigation_spacerBetweenLogoNavList}/>
-                <div className={styleFor.toolbar_list_items}>
+                <div className={styleFor.toolbar_trackers_list_items}>
                     <ul>
                         <li>
-                            <ButtonTransparent onClick={toggleDropDown}>
+                            <ButtonTransparent onClick={toggleDropDownCalc}>
                                 SEARCH TRACKER
                                 <SearchIcon className={styleFor.toolbar_tracker_items_Icons}/>
                             </ButtonTransparent>
@@ -55,7 +55,7 @@ let ToolBar = (props) => {
                 <div className={styleFor.toolbar_langMenu}>
                     <LanguageMenu/>
                 </div>
-                <div className={styleFor.toolbar_list_items}>
+                <div className={styleFor.toolbar_controls_list_items}>
                     <ul>
                         <li>
                             <img src={calc} alt={'add'} className={styleFor.toolbar_list_items_Icons}/>
@@ -69,9 +69,9 @@ let ToolBar = (props) => {
                     <SideButton/>
                 </div>
             </nav>
-            {DropDownOpen
-                ? <div className={styleFor.toolbar_dropDownPage} onClick={toggleDropDown}>
-                    <DropDownPage backg={'red'}/>
+            {DropDownCalcOpen
+                ? <div className={styleFor.toolbar_dropDownPage} onClick={toggleDropDownCalc}>
+                    <DropDownPage/>
                 </div>
                 : <div className={styleFor.toolbar_dropDownPageClose}/>
             }
