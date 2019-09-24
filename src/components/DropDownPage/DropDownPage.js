@@ -20,7 +20,7 @@ let DropDownPage = (props) => {
                 />
             </Popper>
             <div className={styleFor.DropDownPage_content}>
-
+                {props.children}
             </div>
         </div>
     )
