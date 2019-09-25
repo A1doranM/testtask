@@ -99,13 +99,6 @@ export const styleForToolbar = makeStyles(theme => ({
         fontSize: '20px',
     },
 
-    toolbar_control_items_Icons: {
-        fontSize: '30px',
-    },
-
-    toolbar_list_items_Icons: {
-        color: '#85ADB6',
-    },
 
     //SPACERS
 

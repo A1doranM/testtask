@@ -75,10 +75,10 @@ let ToolBar = (props) => {
                 <div className={styleFor.toolbar_controls_list_items}>
                     <ul>
                         <li>
-                            <img src={calc} alt={'add'} className={styleFor.toolbar_list_items_Icons} onClick={toggleDropDownPage}/>
+                            <img src={calc} alt={'add'} onClick={toggleDropDownPage}/>
                         </li>
                         <li>
-                            <img src={SignInLogIn} alt={'search'} className={styleFor.toolbar_list_items_Icons}/>
+                            <img src={SignInLogIn} alt={'signIn'} />
                         </li>
                     </ul>
                 </div>
