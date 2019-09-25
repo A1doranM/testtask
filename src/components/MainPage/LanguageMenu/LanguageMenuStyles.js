@@ -23,7 +23,7 @@ export const LanguageMenuItem = styled(MenuItem)({
 });
 
 export const styleForLanguageMenu = makeStyles(theme => ({
-    languageMenu_text: {
+    languageMenuDropDown_text: {
         marginLeft: '5px',
         marginRight: '5px',
         fontFamily: 'Roboto',
@@ -34,15 +34,20 @@ export const styleForLanguageMenu = makeStyles(theme => ({
         textTransform: 'uppercase',
         color: 'white',
     },
-    languageMenu_rectangle: {
-        position: 'float',
-        top: '-5px',
-        left: '50%',
-        width: '26.66px',
-        height: '26.66px',
-        background: 'black',
-        transform: 'matrix(0.71, 0.69, -0.73, 0.71, 0, 0)',
-        zIndex: '100',
+    languageMenuHorizontal: {
+        width: '100%',
+        height: '100%',
+        fontFamily: 'Roboto',
+        fontStyle: 'normal',
+        fontWeight: 'normal',
+        fontSize: '15px',
+        lineHeight: '18px',
+        textTransform: 'uppercase',
+        color: 'black',
+    },
+    languageMenuHorizontal_item: {
+        display: 'inline-block',
+        margin: '10px',
     }
 }));
 

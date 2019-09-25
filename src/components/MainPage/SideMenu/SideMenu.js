@@ -1,10 +1,12 @@
 import React from 'react';
 import {styleForSideMenu} from "./SideMenuStyle";
-import {Collapse, List, ListItem, ListItemIcon, Typography} from "@material-ui/core/es/index";
+import {Collapse, List, ListItem, ListItemIcon, Typography} from '@material-ui/core/es/index';
 import MenuIcon from '@material-ui/icons/Menu';
-import ExpandLess from "@material-ui/icons/esm/ExpandLess";
-import ExpandMore from "@material-ui/icons/esm/ExpandMore";
+import ExpandLess from '@material-ui/icons/esm/ExpandLess';
+import ExpandMore from '@material-ui/icons/esm/ExpandMore';
 import closeIcon from '../../../assets/images/sideMenu/x.svg';
+import LanguageMenu from '../LanguageMenu/LanguageMenu';
+import copyright from '../../../assets/images/copyright/Copyringht FHD.svg'
 
 let SideMenu = (props) => {
     let SideMenuData = {
@@ -172,6 +174,14 @@ let SideMenu = (props) => {
                         </List>
                     </Collapse>
                 </List>
+            </div>
+            <div className={styleFor.sideMenu_footer}>
+                <div className={styleFor.sideMenu_footer_languages}>
+                    <LanguageMenu menuStyle={'horizontal'}/>
+                </div>
+                <div className={styleFor.sideMenu_footer_copyright}>
+                    <img src={copyright} alt={'Copyright FHD'}/>
+                </div>
             </div>
         </div>
     );

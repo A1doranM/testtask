@@ -15,6 +15,7 @@ export const styleForSideMenu = makeStyles(theme => ({
         height: '65px',
         backgroundColor: '#e1ebee',
     },
+
     sideMenu_userName: {
         width: '240px',
         paddingLeft: '5px',
@@ -24,20 +25,35 @@ export const styleForSideMenu = makeStyles(theme => ({
         fontSize: '20px',
         color: 'black',
     },
-    sideMenu_close:{
-    },
+
     innerMenu_expandMoreIcon: {
         position: 'absolute',
         right: '10px'
     },
-    innerMenu_text: {
-        marginLeft: '5px',
-        fontSize: 'h6'
-    },
-    innerMenu_item: {
-        marginLeft: '40px',
-        fontSize: 'h6'
-    },
-}));
 
-export const styleForSideButton = makeStyles(theme => ({}));
+    innerMenu_text: {
+        marginLeft: '25px',
+        fontSize: 'h6'
+    },
+
+    innerMenu_item: {
+        fontSize: 'h6'
+    },
+
+    sideMenu_footer: {
+        display: 'flex',
+        position: 'absolute',
+        width: '100%',
+        alignItems: 'center',
+        bottom: '10px'
+    },
+
+    sideMenu_footer_languages: {
+        width: '140',
+        margin: '10px',
+    },
+
+    sideMenu_footer_copyright:{
+        marginLeft: '40px'
+    }
+}));

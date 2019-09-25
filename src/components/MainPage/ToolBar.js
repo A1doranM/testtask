@@ -58,7 +58,7 @@ let ToolBar = (props) => {
                 </div>
                 <div className={styleFor.toolbar_navigation_spacerBetweenListLanguages}/>
                 <div className={styleFor.toolbar_langMenu}>
-                    <LanguageMenu/>
+                    <LanguageMenu menuStyle={'drop-down'}/>
                 </div>
                 <div className={styleFor.toolbar_controls_list_items}>
                     <ul>
