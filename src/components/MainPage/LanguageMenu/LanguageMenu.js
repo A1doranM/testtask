@@ -3,9 +3,13 @@ import language from '../../../assets/images/languageMenu/languages.svg';
 import arrow from '../../../assets/images/languageMenu/arrow.svg';
 import {LanguageButton, LanguageDropDownMenu, LanguageMenuItem, styleForLanguageMenu} from "./LanguageMenuStyles";
 
-let changeLanguage = () => {};
-
 export default function LanguageMenu(props) {
+    let languageMenuData = {
+        EN: 'EN',
+        RU: 'RU',
+        CN: 'CN',
+    };
+
     const [anchorEl, setAnchorEl] = React.useState(null);
     const styleFor = styleForLanguageMenu();
 
@@ -22,7 +26,7 @@ export default function LanguageMenu(props) {
             <div>
                 <LanguageButton aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
                     <img src={language} alt={'language'}/>
-                    <span className={styleFor.languageMenuDropDown_text}>EN</span>
+                    <span className={styleFor.languageMenuDropDown_text}>{languageMenuData.EN}</span>
                     <img src={arrow} alt={'arrow'}/>
                 </LanguageButton>
                 <LanguageDropDownMenu
@@ -32,18 +36,18 @@ export default function LanguageMenu(props) {
                     open={Boolean(anchorEl)}
                     onClose={handleClose}
                 >
-                    <LanguageMenuItem onClick={handleClose}>EN</LanguageMenuItem>
-                    <LanguageMenuItem onClick={handleClose}>RU</LanguageMenuItem>
-                    <LanguageMenuItem onClick={handleClose}>CN</LanguageMenuItem>
+                    <LanguageMenuItem onClick={handleClose}>{languageMenuData.EN}</LanguageMenuItem>
+                    <LanguageMenuItem onClick={handleClose}>{languageMenuData.RU}</LanguageMenuItem>
+                    <LanguageMenuItem onClick={handleClose}>{languageMenuData.CN}</LanguageMenuItem>
                 </LanguageDropDownMenu>
             </div>
         );
     } else if(props.menuStyle === 'horizontal'){
         return (
             <div className={styleFor.languageMenuHorizontal}>
-                <div className={styleFor.languageMenuHorizontal_item}>EN</div>
-                <div className={styleFor.languageMenuHorizontal_item}>RU</div>
-                <div className={styleFor.languageMenuHorizontal_item}>CN</div>
+                <div className={styleFor.languageMenuHorizontal_item}>{languageMenuData.EN}</div>
+                <div className={styleFor.languageMenuHorizontal_item}>{languageMenuData.RU}</div>
+                <div className={styleFor.languageMenuHorizontal_item}>{languageMenuData.CN}</div>
             </div>
         );
     }

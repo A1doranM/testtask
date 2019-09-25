@@ -12,6 +12,18 @@ import {styleForToolbar} from "./ToolBarStyle";
 import DropDownPage from "../DropDownPage/DropDownPage";
 
 let ToolBar = (props) => {
+
+    let toolbarData = {
+        navigation: {
+            main: 'HOME',
+            FAQ: 'FAQ',
+            contacts: 'CONTACTS',
+        },
+        buttonSearchTracker: 'SEARCH TRACKER',
+        buttonCreateTracker: 'CREATE TRACKER',
+    };
+
+
     let styleFor = styleForToolbar();
     const [anchorEl, setAnchorEl] = React.useState(null);
     const dropDownPage = React.createRef();
@@ -34,9 +46,9 @@ let ToolBar = (props) => {
                 <div className={styleFor.toolbar_navigation_spacerBetweenLogoNavList}/>
                 <div className={styleFor.toolbar_navigation_items}>
                     <ul>
-                        <li><NavLink className={styleFor.toolbar_navigation_items_link} to='/'>MAIN</NavLink></li>
-                        <li><NavLink className={styleFor.toolbar_navigation_items_link} to='/'>FAQ</NavLink></li>
-                        <li><NavLink className={styleFor.toolbar_navigation_items_link} to='/'>CONTACTS</NavLink></li>
+                        <li><NavLink className={styleFor.toolbar_navigation_items_link} to='/'>{toolbarData.navigation.main}</NavLink></li>
+                        <li><NavLink className={styleFor.toolbar_navigation_items_link} to='/'>{toolbarData.navigation.FAQ}</NavLink></li>
+                        <li><NavLink className={styleFor.toolbar_navigation_items_link} to='/'>{toolbarData.navigation.contacts}</NavLink></li>
                     </ul>
                 </div>
                 <div className={styleFor.toolbar_navigation_spacerBetweenLogoNavList}/>
@@ -44,13 +56,13 @@ let ToolBar = (props) => {
                     <ul>
                         <li>
                             <ButtonTransparent onClick={toggleDropDownPage}>
-                                SEARCH TRACKER
+                                {toolbarData.buttonSearchTracker}
                                 <SearchIcon className={styleFor.toolbar_tracker_items_Icons}/>
                             </ButtonTransparent>
                         </li>
                         <li>
                             <ButtonTransparent onClick={toggleDropDownPage}>
-                                CREATE TRACKER
+                                {toolbarData.buttonCreateTracker}
                                 <AddIcon className={styleFor.toolbar_tracker_items_Icons}/>
                             </ButtonTransparent>
                         </li>

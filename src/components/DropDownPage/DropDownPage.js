@@ -9,16 +9,18 @@ let DropDownPage = (props) => {
 
     return (
         <div className={styleFor.DropDownPage}>
-            <Popper
-                id={'rectangle'}
-                open={true}
-                anchorEl={anchorEL}
-            >
-                <img src={rectangle}
-                     alt={'rectangle'}
-                     className={styleFor.DropDownPage_rectangle}
-                />
-            </Popper>
+            <div className={styleFor.DropDownPage_innerPopper}>
+                <Popper
+                    id={'rectangle'}
+                    open={true}
+                    anchorEl={anchorEL}
+                >
+                    <img src={rectangle}
+                         alt={'rectangle'}
+                         className={styleFor.DropDownPage_rectangle}
+                    />
+                </Popper>
+            </div>
             <div className={styleFor.DropDownPage_content}>
                 {props.children}
             </div>
