@@ -1,14 +1,13 @@
 import React from 'react';
 import './App.css';
-import ToolBarContainer from "./components/MainPage/ToolBarContainer";
+import Contacts from "./components/contacts/Contacts";
 
 function App() {
-  return (
-    <div className="App">
-      <ToolBarContainer/>
-        <div style={{color: 'red'}}>CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT CONTENT</div>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Contacts/>
+        </div>
+    );
 }
 
 export default App;

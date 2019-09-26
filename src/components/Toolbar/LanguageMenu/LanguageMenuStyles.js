@@ -13,8 +13,8 @@ export const LanguageButton = styled(Button)({
 });
 
 export const LanguageDropDownMenu = styled(Menu)({
-    marginTop: '60px',
-    marginLeft: '15px',
+    marginLeft: '5px',
+
 });
 
 export const LanguageMenuItem = styled(MenuItem)({

@@ -35,6 +35,8 @@ export default function LanguageMenu(props) {
                     keepMounted
                     open={Boolean(anchorEl)}
                     onClose={handleClose}
+                    anchorOrigin={{ vertical: "top", horizontal: "center" }}
+                    transformOrigin={{ vertical: "top", horizontal: "center" }}
                 >
                     <LanguageMenuItem onClick={handleClose}>{languageMenuData.EN}</LanguageMenuItem>
                     <LanguageMenuItem onClick={handleClose}>{languageMenuData.RU}</LanguageMenuItem>

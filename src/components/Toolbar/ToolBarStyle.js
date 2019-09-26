@@ -103,8 +103,9 @@ export const styleForToolbar = makeStyles(theme => ({
     //SPACERS
 
     toolbar_navigation_spacerBetweenLogoNavList: {
-        flex: '0.3',
+        flex: '0.5',
     },
+
     toolbar_navigation_spacerBetweenListLanguages: {
         flex: '0.2',
     },
