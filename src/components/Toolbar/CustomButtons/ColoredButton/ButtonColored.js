@@ -11,22 +11,23 @@ const LocalVariables = {
     'zIndex_0': '0',
 };
 
-const LogIn = styled(CustomButton)({
+const Colored = styled(CustomButton)({
     background: LocalVariables.backgroundColor,
     borderRadius: `${LocalVariables.borderRadius}rem`,
     '&:hover': {
         backgroundColor: LocalVariables.backgroundColor
     },
 });
-let ButtonLogIn = (props) => {
+let ButtonColored = (props) => {
     return (
-        <LogIn
+        <Colored
             variant="contained"
-            type="submit"
+            type={props.type}
+            style={props.style}
         >
-            <ExitToAppIcon fontSize='small'/> {props.children}
-        </LogIn>
+            {props.children}
+        </Colored>
     )
 };
 
-export default ButtonLogIn
+export default ButtonColored

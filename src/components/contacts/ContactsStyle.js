@@ -2,34 +2,54 @@ import {
     makeStyles
 } from "@material-ui/core";
 
+export const styleForAddressList = makeStyles(theme => ({
+    addressList: {
+        width: '330px',
+        height: '240px',
+        paddingTop: '5px',
+        paddingLeft: '15px',
+        paddingRight: '15px',
+        paddingBottom: '10px',
+    },
+
+    addresslist_li: {
+        display: 'flex',
+        margin: '0px',
+        listStyleType: 'none',
+        fontWeight: 'normal',
+        fontSize: '14px',
+        lineHeight: '30px',
+        '& p': {
+            width: '35%',
+            margin: '0px',
+            color: '#828282',
+        },
+        '& span': {
+            width: '65%',
+            fontWeight: 500,
+            fontSize: '16px',
+            lineHeight: '30px',
+        }
+    }
+}));
+
 export const styleForContacts = makeStyles(theme => ({
+    root: {
+        minHeight: '100%',
+    },
+
     contacts: {
-        marginTop: '120px',
-        width: '1440px',
-        height: '1440px',
+        marginTop: '70px',
+        width: '1170px',
+        height: '100%',
         marginLeft: 'auto',
         marginRight: 'auto',
         fontFamily: 'Roboto',
         fontStyle: 'normal',
-        background: 'gray',
-    },
-
-    contacts_sectionStocks: {
-        width: '100%',
-        height: '875px',
-        background: 'green',
-        paddingTop: '100px',
-    },
-
-    contacts_sectionContactWithUs: {
-        width: '100%',
-        height: '550px',
-        background: 'red',
-        paddingTop: '100px'
     },
 
     contacts_headers: {
-        fontWeight: 500,
+        fontWeight: '500',
         fontSize: '42px',
         lineHeight: '49px',
         textTransform: 'uppercase',
@@ -42,13 +62,67 @@ export const styleForContacts = makeStyles(theme => ({
         height: '100px',
     },
 
-    contacts_sectionStocks_sectionMaps: {
-        width: '1170px',
-        height: 'fit-content',
+    contacts_sectionWarehouses: {
+        width: '100%',
+        height: '720px',
+        paddingTop: '70px'
     },
-    contacts_sectionStocks_sectionMaps_item: {
-        width: '390px',
+
+    contacts_sectionWarehouses_sectionMaps_item: {
         height: '520px',
-        background: 'yellow',
+        width: '360px',
+        background: '#F8FAFB',
+    },
+
+    contacts_sectionWarehouses_sectionMaps_item_map: {
+        height: '240px',
+        background: 'black',
+    },
+
+    contacts_sectionWarehouses_sectionMaps_item_map_image: {
+        width: '100%',
+        height: '100%',
+    },
+
+    contacts_sectionContactWithUs: {
+        width: '100%',
+        height: '350px',
+        marginBottom: '60px',
+        '& h2': {
+            marginTop: '0',
+        }
+    },
+
+    contacts_sectionContactWithUs_input: {
+        width: '100%',
+        height: '60px',
+        ...generalVariablesForContactWithUs
+    },
+
+    contacts_sectionContactWithUs_textarea: {
+        height: '150px',
+        width: '100%',
+        paddingTop: '10px',
+        ...generalVariablesForContactWithUs
+    },
+
+    contacts_sectionContactWithUs_button: {
+        height: '50px',
+        width: '200px',
     }
 }));
+
+let generalVariablesForContactWithUs = {
+    background: '#F8FAFB',
+    border: '1px solid #D4DBDC',
+    boxSizing: 'border-box',
+    borderRadius: '3px',
+    padding: '0 34px 0 20px',
+    fontFamily: 'Roboto',
+    fontStyle: 'normal',
+    fontWeight: 'normal',
+    fontSize: '16px',
+    lineHeight: '19px',
+    color: '#BDBDBD',
+
+};

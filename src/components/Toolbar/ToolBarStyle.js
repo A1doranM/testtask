@@ -19,6 +19,7 @@ let generalStyleForToolbar = {
 export const styleForToolbar = makeStyles(theme => ({
     toolbarDefault: {
         ...generalStyleForToolbar,
+        height: '70px',
         background: 'linear-gradient(45deg, #478292 30%, #095e72 90%)',
     },
 
@@ -32,7 +33,7 @@ export const styleForToolbar = makeStyles(theme => ({
     toolbar_navigation: {
         display: 'flex',
         height: '100%',
-        width: '1440px',
+        width: '1170px',
         marginLeft: 'auto',
         marginRight: 'auto',
         alignItems: 'center',

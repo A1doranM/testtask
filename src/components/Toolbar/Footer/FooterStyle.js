@@ -3,17 +3,9 @@ import {
 } from "@material-ui/core";
 
 let generalStyleForFooter = {
-    position: 'fixed',
     width: '100%',
-    bottom: '0',
-    left: '0',
     height: '100px',
-    fontFamily: 'Roboto',
-    fontStyle: 'normal',
-    fontWeight: 'normal',
-    fontSize: '15px',
-    lineHeight: '16px',
-    textTransform: 'uppercase',
+    position: 'relative'
 };
 
 export const styleForFooter = makeStyles(theme => ({
@@ -25,17 +17,11 @@ export const styleForFooter = makeStyles(theme => ({
     footer_body: {
         display: 'flex',
         height: '100%',
-        width: '1440px',
+        width: '1170px',
         marginLeft: 'auto',
         marginRight: 'auto',
         alignItems: 'center',
         alignContent: 'center',
-        '& ul': {
-            listStyle: 'none',
-            margin: '0',
-            padding: '0',
-            display: 'flex',
-        },
     },
 
     //LOGO

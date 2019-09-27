@@ -7,7 +7,7 @@ let Footer = (props) => {
     let styleFor = styleForFooter();
 
     return (
-        <div className={styleFor.footer}>
+        <footer className={styleFor.footer}>
             <nav className={styleFor.footer_body}>
                 <div className={styleFor.footer_logo}><img src={logo} alt={'logo'}/></div>
                 <div className={styleFor.footer_body_spacerBetweenLogoLangMenu}/>
@@ -15,7 +15,7 @@ let Footer = (props) => {
                     <LanguageMenu menuStyle={'drop-down'}/>
                 </div>
             </nav>
-        </div>
+        </footer>
     )
 };
 
