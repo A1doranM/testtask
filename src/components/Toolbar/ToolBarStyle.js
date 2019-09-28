@@ -175,9 +175,12 @@ export const styleForToolbar = makeStyles(theme => ({
         }
     },
 
-    '@media(max-width: 720px)': {
+    '@media(max-width: 800px)': {
         toolbar_navigation: {
             width: '100vw',
+        },
+        toolbar_sideMenuButton: {
+            marginRight: '50px',
         },
     },
 }));
