@@ -12,6 +12,9 @@ const Transparent = styled(CustomButton)({
         color: 'white',
         background: 'transparent'
     },
+    '@media(max-width: 960px)' : {
+        fontSize: '0'
+    }
 });
 
 let ButtonTransparent = (props) => {

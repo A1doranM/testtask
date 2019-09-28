@@ -1,7 +1,6 @@
 import React from 'react';
 import {styled} from '@material-ui/styles';
 import 'typeface-roboto';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import {CustomButton} from "../GeneralStyleVariables";
 
 const LocalVariables = {

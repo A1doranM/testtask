@@ -36,6 +36,7 @@ export const styleForAddressList = makeStyles(theme => ({
 export const styleForContacts = makeStyles(theme => ({
     root: {
         minHeight: '100%',
+        boxSizing: 'border-box'
     },
 
     contacts: {
@@ -70,13 +71,15 @@ export const styleForContacts = makeStyles(theme => ({
 
     contacts_sectionWarehouses_sectionMaps_item: {
         height: '520px',
-        width: '360px',
+        width: '100%',
         background: '#F8FAFB',
     },
 
     contacts_sectionWarehouses_sectionMaps_item_map: {
         height: '240px',
+        width: '100%',
         background: 'black',
+        backgroundSize: 'cover',
     },
 
     contacts_sectionWarehouses_sectionMaps_item_map_image: {
@@ -86,7 +89,6 @@ export const styleForContacts = makeStyles(theme => ({
 
     contacts_sectionContactWithUs: {
         width: '100%',
-        height: '350px',
         marginBottom: '60px',
         '& h2': {
             marginTop: '0',
@@ -109,7 +111,45 @@ export const styleForContacts = makeStyles(theme => ({
     contacts_sectionContactWithUs_button: {
         height: '50px',
         width: '200px',
-    }
+    },
+
+    //RESPONSIVE
+
+    [theme.breakpoints.down('md')]: {
+        //FOR NAVIGATION
+        contacts: {
+            width: '970px',
+        },
+    },
+
+    [theme.breakpoints.down('sm')]: {
+        contacts: {
+            width: '850px',
+        },
+
+        //HEADER
+        contacts_headers: {
+            textAlign: 'center',
+        },
+
+        //WAREHOUSES
+        contacts_sectionWarehouses: {
+            height: '1800px'
+        },
+
+        //CONTACT WITH US
+        contacts_sectionContactWithUs: {
+            marginTop: '100px',
+            marginBottom: '100px',
+        }
+    },
+
+    '@media(max-width: 900px)': {
+        contacts: {
+            width: '90vw',
+        },
+    },
+
 }));
 
 let generalVariablesForContactWithUs = {

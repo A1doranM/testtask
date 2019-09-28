@@ -75,27 +75,24 @@ let Contacts = (props) => {
                           spacing={5}>
                         <Grid key={1} item xs={12} md={4}>
                             <div className={styleFor.contacts_sectionWarehouses_sectionMaps_item}>
-                                <div className={styleFor.contacts_sectionWarehouses_sectionMaps_item_map}>
-                                    <img src={map_ukraine} alt={'Ukraine map'}
-                                         className={styleFor.contacts_sectionWarehouses_sectionMaps_item_map_image}/>
+                                <div className={styleFor.contacts_sectionWarehouses_sectionMaps_item_map}
+                                        style={{backgroundImage: `url(${map_ukraine})`}}>
                                 </div>
                                 <AddressList/>
                             </div>
                         </Grid>
                         <Grid key={2} item xs={12} md={4}>
                             <div className={styleFor.contacts_sectionWarehouses_sectionMaps_item}>
-                                <div className={styleFor.contacts_sectionWarehouses_sectionMaps_item_map}>
-                                    <img src={map_usa} alt={'USA map'}
-                                         className={styleFor.contacts_sectionWarehouses_sectionMaps_item_map_image}/>
+                                <div className={styleFor.contacts_sectionWarehouses_sectionMaps_item_map}
+                                     style={{backgroundImage: `url(${map_usa})`}}>
                                 </div>
                                 <AddressList/>
                             </div>
                         </Grid>
                         <Grid key={3} item xs={12} md={4}>
                             <div className={styleFor.contacts_sectionWarehouses_sectionMaps_item}>
-                                <div className={styleFor.contacts_sectionWarehouses_sectionMaps_item_map}>
-                                    <img src={map_china} alt={'China map'}
-                                         className={styleFor.contacts_sectionWarehouses_sectionMaps_item_map_image}/>
+                                <div className={styleFor.contacts_sectionWarehouses_sectionMaps_item_map}
+                                     style={{backgroundImage: `url(${map_china})`}}>
                                 </div>
                                 <AddressList/>
                             </div>
