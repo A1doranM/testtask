@@ -34,6 +34,13 @@ export const styleForPersonalCabinet = makeStyles(theme => ({
             listStyleType: 'none',
             paddingLeft: '0',
             paddingRight: 'auto',
+            '& :hover': {
+                '& svg': {
+                    '& path, rect, circle': {
+                        stroke: '#0A5E74',
+                    },
+                }
+            }
         },
 
         mainWrapper_operatorWrapper_operatorInfo_list_item: {
@@ -43,11 +50,16 @@ export const styleForPersonalCabinet = makeStyles(theme => ({
                 textDecoration: 'none',
                 color: 'black',
                 ...generalStyleForListItems,
-            }
+            },
         },
 
         mainWrapper_operatorWrapper_operatorInfo_list_icon: {
             marginRight: '20px',
+            // '& svg': {
+            //     '& path, rect': {
+            //         fill: 'red',
+            //     },
+            // }
         },
 
         list_createTracker: {

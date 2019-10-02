@@ -3,7 +3,6 @@ import {styleForPersonalCabinet} from "./PersonalCabinetStyle";
 import {Grid} from "@material-ui/core/es/index";
 import ToolBarContainer from "../Toolbar/ToolBarContainer";
 import {NavLink} from "react-router-dom";
-import Icon from "./PersonalCabinetSVG/Icon";
 
 let PersonalCabinet = (props) => {
     let styleFor = styleForPersonalCabinet();
@@ -42,8 +41,7 @@ let PersonalCabinet = (props) => {
                             <div className={styleFor.mainWrapper_operatorWrapper_operatorInfo}>
                                 <ul className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list}>
                                     <li className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_item + ' ' + styleFor.list_createTracker}>
-                                        {/*<span dangerouslySetInnerHTML={{ __html: props.icons.plusIcon}} className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>*/}
-                                        <Icon svg={props.icons.plusIcon}/>
+                                        <span dangerouslySetInnerHTML={{ __html: props.icons.plusIcon}} className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>
                                         <NavLink to={''}>{PersonalCabinetData.operatorInfo.createTracker}</NavLink>
                                     </li>
                                     <li className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_item}>
