@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
-import Contacts from "./components/contacts/Contacts";
+import PersonalCabinetContainer from "./components/PersonalCabinet/PersonalCabinetContainer";
 
 function App() {
     return (
         <div className="App">
-            <Contacts/>
+            <PersonalCabinetContainer/>
         </div>
     );
 }
