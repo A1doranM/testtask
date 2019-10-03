@@ -8,7 +8,6 @@ let TabPanel = (props) => {
 
     const styleFor = styleForTabPanels();
 
-
     function a11yProps(index) {
         return {
             id: `simple-tab-${index}`,

@@ -4,8 +4,9 @@ import {Grid} from "@material-ui/core/es/index";
 import ToolBarContainer from "../Toolbar/ToolBarContainer";
 import {NavLink} from "react-router-dom";
 import TabPanel from "./CustomizedTabs/TabPanel";
-import OrdersTable from "./OrdersTable";
-import {makeStyles} from "@material-ui/core/styles/index";
+import {makeStyles} from "@material-ui/core/index";
+import OrdersTable from "./OrdersTable/OrdersTable";
+
 
 
 let PersonalCabinet = (props) => {
@@ -16,6 +17,7 @@ let PersonalCabinet = (props) => {
             maxWidth: '100%',
             borderCollapse: 'collapse',
             background: 'red',
+            color: 'red',
         }
     }));
 
@@ -99,15 +101,7 @@ let PersonalCabinet = (props) => {
                         <div className={styleFor.mainWrapper_history}>
                             <div className={styleFor.mainWrapper_history_navs}>
                                 <TabPanel tabsContent={PersonalCabinetData.historyInfo}/>
-                                <table className={styleTest.ordersTable}>
-                                    <tbody>
-                                    <tr>
-                                        <th>№ Invoice</th>
-                                        <th>Data</th>
-                                        <th>Status</th>
-                                    </tr>
-                                    </tbody>
-                                </table>
+                                <OrdersTable/>
                                 {/*<ul className={styleFor.mainWrapper_historyWrapper_list}>*/}
                                     {/*<li className={styleFor.mainWrapper_historyWrapper_list_item} onClick={openActualOrders}>*/}
                                         {/*<NavLink to={'/'}>{PersonalCabinetData.historyInfo.actualOrders.title}</NavLink>*/}

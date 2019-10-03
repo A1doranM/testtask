@@ -1,20 +1,12 @@
 import React from 'react'
-import {
-    makeStyles
-} from "@material-ui/core";
-import {Typography} from "@material-ui/core/es/index";
+import {styleForOrdersTable} from "./OrdersTableStyle";
+
 
 let OrdersTable = (props) => {
-    const {value, index} = props;
+    // const {value, index} = props;
 
-    let styleFor = makeStyles(theme => ({
-        ordersTable: {
-            width: '100%',
-            maxWidth: '100%',
-            borderCollapse: 'collapse',
-            background: 'red',
-        }
-    }));
+    const styleFor = styleForOrdersTable();
+
 
     {/*<div*/}
         {/*hidden={value !== index}*/}
