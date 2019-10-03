@@ -3,9 +3,21 @@ import {styleForPersonalCabinet} from "./PersonalCabinetStyle";
 import {Grid} from "@material-ui/core/es/index";
 import ToolBarContainer from "../Toolbar/ToolBarContainer";
 import {NavLink} from "react-router-dom";
+import TabPanel from "./CustomizedTabs/TabPanel";
+import OrdersTable from "./OrdersTable";
+import {makeStyles} from "@material-ui/core/styles/index";
+
 
 let PersonalCabinet = (props) => {
     let styleFor = styleForPersonalCabinet();
+    let styleTest = makeStyles(theme => ({
+        ordersTable: {
+            width: '100%',
+            maxWidth: '100%',
+            borderCollapse: 'collapse',
+            background: 'red',
+        }
+    }));
 
     let PersonalCabinetData = {
         operatorInfo: {
@@ -29,7 +41,6 @@ let PersonalCabinet = (props) => {
         }
     };
 
-
     return (
         <div className={styleFor.root}>
             <ToolBarContainer scrolledToolbar={false}/>
@@ -41,31 +52,38 @@ let PersonalCabinet = (props) => {
                             <div className={styleFor.mainWrapper_operatorWrapper_operatorInfo}>
                                 <ul className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list}>
                                     <li className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_item + ' ' + styleFor.list_createTracker}>
-                                        <span dangerouslySetInnerHTML={{ __html: props.icons.plusIcon}} className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>
+                                        <span dangerouslySetInnerHTML={{__html: props.icons.plusIcon}}
+                                              className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>
                                         <NavLink to={''}>{PersonalCabinetData.operatorInfo.createTracker}</NavLink>
                                     </li>
                                     <li className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_item}>
-                                        <span dangerouslySetInnerHTML={{ __html: props.icons.transportStickerIcon}} className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>
+                                        <span dangerouslySetInnerHTML={{__html: props.icons.transportStickerIcon}}
+                                              className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>
                                         <NavLink to={''}>{PersonalCabinetData.operatorInfo.transportSticker}</NavLink>
                                     </li>
                                     <li className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_item}>
-                                        <span dangerouslySetInnerHTML={{ __html: props.icons.recipientContactsIcon}} className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>
+                                        <span dangerouslySetInnerHTML={{__html: props.icons.recipientContactsIcon}}
+                                              className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>
                                         <NavLink to={''}>{PersonalCabinetData.operatorInfo.recipientContacts}</NavLink>
                                     </li>
                                     <li className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_item}>
-                                        <span dangerouslySetInnerHTML={{ __html: props.icons.deliveryAddressIcon}} className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>
+                                        <span dangerouslySetInnerHTML={{__html: props.icons.deliveryAddressIcon}}
+                                              className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>
                                         <NavLink to={''}>{PersonalCabinetData.operatorInfo.deliveryAddress}</NavLink>
                                     </li>
                                     <li className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_item}>
-                                        <span dangerouslySetInnerHTML={{ __html: props.icons.paymentCardsIcon}} className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>
+                                        <span dangerouslySetInnerHTML={{__html: props.icons.paymentCardsIcon}}
+                                              className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>
                                         <NavLink to={''}>{PersonalCabinetData.operatorInfo.paymentCards}</NavLink>
                                     </li>
                                     <li className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_item}>
-                                        <span dangerouslySetInnerHTML={{ __html: props.icons.profileSettingsIcon}} className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>
+                                        <span dangerouslySetInnerHTML={{__html: props.icons.profileSettingsIcon}}
+                                              className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>
                                         <NavLink to={''}>{PersonalCabinetData.operatorInfo.profileSettings}</NavLink>
                                     </li>
                                     <li className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_item}>
-                                        <span dangerouslySetInnerHTML={{ __html: props.icons.markFriendIcon}} className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>
+                                        <span dangerouslySetInnerHTML={{__html: props.icons.markFriendIcon}}
+                                              className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>
                                         <NavLink to={''}>{PersonalCabinetData.operatorInfo.markFriend}</NavLink>
                                     </li>
                                 </ul>
@@ -79,18 +97,28 @@ let PersonalCabinet = (props) => {
                     </Grid>
                     <Grid item xs={12} lg={4}>
                         <div className={styleFor.mainWrapper_history}>
-                            <div className={styleFor.mainWrapper_historyWrapper}>
-                                <ul className={styleFor.mainWrapper_historyWrapper_list}>
-                                    <li className={styleFor.mainWrapper_historyWrapper_list_item}>
-                                        <a href={'/'}>{PersonalCabinetData.historyInfo.actualOrders.title}</a>
-                                    </li>
-                                    <li className={styleFor.mainWrapper_historyWrapper_list_item}>
-                                        <a href={'/'}>{PersonalCabinetData.historyInfo.draft}</a>
-                                    </li>
-                                    <li className={styleFor.mainWrapper_historyWrapper_list_item}>
-                                        <a href={'/'}>{PersonalCabinetData.historyInfo.archive}</a>
-                                    </li>
-                                </ul>
+                            <div className={styleFor.mainWrapper_history_navs}>
+                                <TabPanel tabsContent={PersonalCabinetData.historyInfo}/>
+                                <table className={styleTest.ordersTable}>
+                                    <tbody>
+                                    <tr>
+                                        <th>№ Invoice</th>
+                                        <th>Data</th>
+                                        <th>Status</th>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                {/*<ul className={styleFor.mainWrapper_historyWrapper_list}>*/}
+                                    {/*<li className={styleFor.mainWrapper_historyWrapper_list_item} onClick={openActualOrders}>*/}
+                                        {/*<NavLink to={'/'}>{PersonalCabinetData.historyInfo.actualOrders.title}</NavLink>*/}
+                                    {/*</li>*/}
+                                    {/*<li className={styleFor.mainWrapper_historyWrapper_list_item}>*/}
+                                        {/*<NavLink to={'/'}>{PersonalCabinetData.historyInfo.draft}</NavLink>*/}
+                                    {/*</li>*/}
+                                    {/*<li className={styleFor.mainWrapper_historyWrapper_list_item}>*/}
+                                        {/*<NavLink to={'/'}>{PersonalCabinetData.historyInfo.archive}</NavLink>*/}
+                                    {/*</li>*/}
+                                {/*</ul>*/}
                             </div>
                         </div>
                     </Grid>

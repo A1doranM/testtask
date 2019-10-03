@@ -14,6 +14,7 @@ let generalStyleForToolbar = {
     fontSize: '15px',
     lineHeight: '16px',
     textTransform: 'uppercase',
+    zIndex: '10000'
 };
 
 export const styleForToolbar = makeStyles(theme => ({
