@@ -7,6 +7,22 @@ export const styleForOrdersTable = makeStyles(theme => ({
         width: '100%',
         maxWidth: '100%',
         borderCollapse: 'collapse',
-        background: 'red',
+        fontFamily: 'Roboto',
+        fontStyle: 'normal',
+        fontWeight: 'normal',
+        fontSize: '12px',
+        lineHeight: '14px',
+        textTransform: 'uppercase',
+        textAlign: 'left',
+        color: '#828282',
     },
+
+    ordersTable_head: {},
+
+    ordersTable_body: {
+        '& tr':{
+           height: '50px',
+        }
+    },
+
 }));

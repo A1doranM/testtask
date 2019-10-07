@@ -18,13 +18,14 @@ class PersonalCabinetContainer extends React.Component {
 let mapStateToProps = (state) => {
     return {
         icons: {
-            plusIcon: state.personalCabinet.icons.plus,
-            transportStickerIcon: state.personalCabinet.icons.transportSticker,
-            recipientContactsIcon: state.personalCabinet.icons.recipientContacts,
-            deliveryAddressIcon: state.personalCabinet.icons.deliveryAddress,
-            paymentCardsIcon: state.personalCabinet.icons.paymentCards,
-            profileSettingsIcon: state.personalCabinet.icons.profileSettings,
-            markFriendIcon: state.personalCabinet.icons.markFriend,
+            plusIcon: state.personalCabinet.SVGjson.icons.plus,
+            transportStickerIcon: state.personalCabinet.SVGjson.icons.transportSticker,
+            recipientContactsIcon: state.personalCabinet.SVGjson.icons.recipientContacts,
+            deliveryAddressIcon: state.personalCabinet.SVGjson.icons.deliveryAddress,
+            paymentCardsIcon: state.personalCabinet.SVGjson.icons.paymentCards,
+            profileSettingsIcon: state.personalCabinet.SVGjson.icons.profileSettings,
+            markFriendIcon: state.personalCabinet.SVGjson.icons.markFriend,
+            printerIcon: state.personalCabinet.SVGjson.icons.printer,
         }
     }
 };

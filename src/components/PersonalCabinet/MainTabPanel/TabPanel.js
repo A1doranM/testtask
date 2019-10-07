@@ -1,7 +1,7 @@
 import React from 'react'
-import {AntTab, AntTabs} from "./AntTabs";
+import {AntTab, AntTabs} from "../CustomizedTabs/AntTabs";
 import {styleForTabPanels} from "./TabPanelStyle";
-import ActualOrdersTab from "./ActualOrdersTab/ActualOrdersTab";
+import ActualOrdersTab from "../ActualOrdersTab/ActualOrdersTab";
 
 let TabPanel = (props) => {
     const [value, setValue] = React.useState(0);
@@ -26,7 +26,7 @@ let TabPanel = (props) => {
                 <AntTab label={props.tabsContent.draft} {...a11yProps(1)}/>
                 <AntTab label={props.tabsContent.archive} {...a11yProps(2)}/>
             </AntTabs>
-            <ActualOrdersTab data={props.tabsContent.actualOrders} value={value} index={0}/>
+            <ActualOrdersTab data={props.tabsContent.actualOrders} svg={props.svg} value={value} index={0}/>
         </div>
     )
 };

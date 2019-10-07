@@ -35,7 +35,6 @@ export const styleForPersonalCabinet = makeStyles(theme => ({
         paddingLeft: '0',
         marginTop: '0',
         paddingRight: 'auto',
-        // boxShadow: 'inset 0px 6px 20px rgba(0, 0, 0, 0.25)',
         '& :hover': {
             '& svg': {
                 '& path, rect, circle': {
@@ -110,5 +109,17 @@ export const styleForPersonalCabinet = makeStyles(theme => ({
         }
     },
 
+    //RESPONSIVE
+
+    [theme.breakpoints.down('md')]: {
+        //FOR SIDE MENU
+        mainWrapper_operatorWrapper: {
+            display: 'none',
+        },
+
+        mainWrapper_map: {
+            display: 'none',
+        }
+    },
 
 }));

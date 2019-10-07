@@ -28,7 +28,9 @@ export const AntTab = withStyles(theme => ({
         border: '1px solid #f5f5f5',
     },
     selected: {},
-}))(props => <Tab disableRipple {...props} style={(props.width || props.height) ? {width: props.width,
-                                                                                    height: props.height} : {width: '', height: ''}}
+}))(props => <Tab
+    disableRipple
+    {...props}
+    style={(props.width || props.height) ? {width: props.width, height: props.height} : {width: '', height: ''}}
 />);
 

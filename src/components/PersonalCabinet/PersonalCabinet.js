@@ -3,23 +3,11 @@ import {styleForPersonalCabinet} from "./PersonalCabinetStyle";
 import {Grid} from "@material-ui/core/es/index";
 import ToolBarContainer from "../Toolbar/ToolBarContainer";
 import {NavLink} from "react-router-dom";
-import TabPanel from "./CustomizedTabs/TabPanel";
-import {makeStyles} from "@material-ui/core/index";
-import OrdersTable from "./OrdersTable/OrdersTable";
-
+import TabPanel from "./MainTabPanel/TabPanel";
 
 
 let PersonalCabinet = (props) => {
     let styleFor = styleForPersonalCabinet();
-    let styleTest = makeStyles(theme => ({
-        ordersTable: {
-            width: '100%',
-            maxWidth: '100%',
-            borderCollapse: 'collapse',
-            background: 'red',
-            color: 'red',
-        }
-    }));
 
     let PersonalCabinetData = {
         operatorInfo: {
@@ -94,25 +82,13 @@ let PersonalCabinet = (props) => {
                     </Grid>
                     <Grid item lg={6}>
                         <div className={styleFor.mainWrapper_map}>
-                            MAP
+                          MAP
                         </div>
                     </Grid>
                     <Grid item xs={12} lg={4}>
                         <div className={styleFor.mainWrapper_history}>
                             <div className={styleFor.mainWrapper_history_navs}>
-                                <TabPanel tabsContent={PersonalCabinetData.historyInfo}/>
-                                <OrdersTable/>
-                                {/*<ul className={styleFor.mainWrapper_historyWrapper_list}>*/}
-                                    {/*<li className={styleFor.mainWrapper_historyWrapper_list_item} onClick={openActualOrders}>*/}
-                                        {/*<NavLink to={'/'}>{PersonalCabinetData.historyInfo.actualOrders.title}</NavLink>*/}
-                                    {/*</li>*/}
-                                    {/*<li className={styleFor.mainWrapper_historyWrapper_list_item}>*/}
-                                        {/*<NavLink to={'/'}>{PersonalCabinetData.historyInfo.draft}</NavLink>*/}
-                                    {/*</li>*/}
-                                    {/*<li className={styleFor.mainWrapper_historyWrapper_list_item}>*/}
-                                        {/*<NavLink to={'/'}>{PersonalCabinetData.historyInfo.archive}</NavLink>*/}
-                                    {/*</li>*/}
-                                {/*</ul>*/}
+                                <TabPanel tabsContent={PersonalCabinetData.historyInfo} svg={props.icons.printer}/>
                             </div>
                         </div>
                     </Grid>

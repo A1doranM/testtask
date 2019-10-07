@@ -1,39 +1,64 @@
 import React from 'react'
-import {styleForOrdersTable} from "./OrdersTableStyle";
-
+import {
+    SortingState,
+    IntegratedSorting,
+} from '@devexpress/dx-react-grid';
+import {
+    Grid,
+    Table,
+    TableHeaderRow,
+} from '@devexpress/dx-react-grid-material-ui';
 
 let OrdersTable = (props) => {
-    // const {value, index} = props;
+    const {value, index} = props;
 
-    const styleFor = styleForOrdersTable();
+    const [defaultSorting] = React.useState([
+        {columnName: 'date', direction: 'desc'},
+    ]);
 
+    const [sortingStateColumnExtensions] = React.useState([
+        {columnName: 'icon', sortingEnabled: false},
+    ]);
 
-    {/*<div*/}
-        {/*hidden={value !== index}*/}
-        {/*id={`simple-tabpanel-${index}`}*/}
-        {/*aria-labelledby={`simple-tab-${index}`}*/}
-    {/*>*/}
-        {/*<table className="asd">*/}
-            {/*<tbody>*/}
-            {/*<tr>*/}
-                {/*<th>№ Invoice</th>*/}
-                {/*<th>Data</th>*/}
-                {/*<th>Status</th>*/}
-            {/*</tr>*/}
-            {/*</tbody>*/}
-        {/*</table>*/}
-    {/*</div>*/}
+    const [columns] = React.useState([
+        {name: 'date', title: 'Date'},
+        {name: 'invoiceNumber', title: '№ Invoice'},
+        {name: 'status', title: 'Status'},
+        {name: 'icon', title: 'icon'},
+    ]);
+
+    const [rows] = React.useState(props.tableData.map((data) => {
+            return (
+                {
+                    date: data.date,
+                    invoiceNumber: data.invoiceNumber,
+                    status: data.status,
+                    icon: <span dangerouslySetInnerHTML={{__html: props.printerIcon}}/>,
+                }
+            )
+        })
+    );
 
     return (
-        <table className={styleFor.ordersTable}>
-            <tbody>
-            <tr>
-                <th>№ Invoice</th>
-                <th>Data</th>
-                <th>Status</th>
-            </tr>
-            </tbody>
-        </table>
+        <div
+            hidden={value !== index}
+            id={`simple-tabpanel-${index}`}
+            aria-labelledby={`simple-tab-${index}`}
+        >
+            <Grid
+                rows={rows}
+                columns={columns}
+            >
+                <SortingState defaultSorting={defaultSorting}
+                              columnExtensions={sortingStateColumnExtensions}/>
+                <IntegratedSorting/>
+                <Table/>
+                <TableHeaderRow
+                    allowSorting
+                    showSortingControls
+                />
+            </Grid>
+        </div>
     )
 };
 
