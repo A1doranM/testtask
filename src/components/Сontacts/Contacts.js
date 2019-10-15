@@ -129,10 +129,8 @@ let Contacts = (props) => {
                                 </Grid>
                                 <Grid item xs={12}>
                                     <ButtonColored type={'submit'} style={{
-                                        width: 'fit-content',
                                         height: '60px',
                                         border: 'none',
-                                        padding: '20px 45px',
                                     }}>
                                         Send</ButtonColored>
                                 </Grid>

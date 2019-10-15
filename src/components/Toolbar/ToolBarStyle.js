@@ -14,7 +14,7 @@ let generalStyleForToolbar = {
     fontSize: '15px',
     lineHeight: '16px',
     textTransform: 'uppercase',
-    zIndex: '10000'
+    zIndex: '1'
 };
 
 export const styleForToolbar = makeStyles(theme => ({
@@ -122,7 +122,6 @@ export const styleForToolbar = makeStyles(theme => ({
 
     toolbar_dropDownPage: {
         display: 'flex',
-        height: 'fit-content',
         width: '1440px',
         marginLeft: 'auto',
         marginRight: 'auto',

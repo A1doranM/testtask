@@ -102,7 +102,7 @@ export const styleForContacts = makeStyles(theme => ({
     },
 
     contacts_sectionContactWithUs_textarea: {
-        height: '150px',
+        height: '155px',
         width: '100%',
         paddingTop: '10px',
         ...generalVariablesForContactWithUs

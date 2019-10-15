@@ -6,7 +6,6 @@ export const styleForDropDownPage = makeStyles(theme => ({
     DropDownPage: {
         width: '100%',
         height: '100%',
-        background: 'white'
     },
 
     DropDownPage_content: {

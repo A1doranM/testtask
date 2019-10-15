@@ -14,7 +14,7 @@ export const LanguageButton = styled(Button)({
 
 export const LanguageDropDownMenu = styled(Menu)({
     marginLeft: '5px',
-
+    zIndex: '100000'
 });
 
 export const LanguageMenuItem = styled(MenuItem)({

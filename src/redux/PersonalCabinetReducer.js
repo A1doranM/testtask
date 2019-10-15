@@ -30,11 +30,11 @@ export const PersonalCabinetReducer = (state = initialState, action) => {
             return {
                 ...state,
             };
-        case SORT_BY_KEY:
-            return {
-                ...state,
-                actualOrdersTableData: [...state.actualOrdersTableData.sort(compareBy(action.key))]
-            };
+        // case SORT_BY_KEY:
+        //     return {
+        //         ...state,
+        //         actualOrdersTableData: [...state.actualOrdersTableData.sort(compareBy(action.key))]
+        //     };
         default:
             return state;
     }
@@ -46,17 +46,17 @@ export const initPersonalCabinetActionCreator = () => {
     }
 };
 
-export const sortByKeyActionCreator = (key) => {
-    return {
-        type: SORT_BY_KEY,
-        key: key,
-    }
-};
-
-const compareBy = (key) => {
-    return function (a, b) {
-        if (a[key] > b[key]) return -1;
-        if (a[key] < b[key]) return 1;
-        return 0;
-    };
-};
+// export const sortByKeyActionCreator = (key) => {
+//     return {
+//         type: SORT_BY_KEY,
+//         key: key,
+//     }
+// };
+//
+// const compareBy = (key) => {
+//     return function (a, b) {
+//         if (a[key] > b[key]) return -1;
+//         if (a[key] < b[key]) return 1;
+//         return 0;
+//     };
+// };

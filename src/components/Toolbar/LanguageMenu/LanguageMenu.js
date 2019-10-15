@@ -25,9 +25,9 @@ export default function LanguageMenu(props) {
         return (
             <div>
                 <LanguageButton aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-                    <img src={language} alt={'language'}/>
+                    <span dangerouslySetInnerHTML={{__html: props.languageIcon}}/>
                     <span className={styleFor.languageMenuDropDown_text}>{languageMenuData.EN}</span>
-                    <img src={arrow} alt={'arrow'}/>
+                    <span dangerouslySetInnerHTML={{__html: props.arrow}}/>
                 </LanguageButton>
                 <LanguageDropDownMenu
                     id="simple-menu"

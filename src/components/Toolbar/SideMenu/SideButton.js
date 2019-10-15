@@ -13,7 +13,7 @@ let SideButton = (props) => {
 
     return (
         <div>
-            <img src={sideMenuButton} alt={'side button'} onClick={handleDrawerToggle}/>
+            <span dangerouslySetInnerHTML={{__html: props.burgerIcon}} onClick={handleDrawerToggle}/>
             <nav aria-label="mailbox folders">
                 <Hidden smUp implementation="css">
                     <Drawer

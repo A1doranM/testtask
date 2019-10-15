@@ -10,6 +10,7 @@ import logo from '../../assets/images/toolbar/logo.svg';
 import SignInLogIn from '../../assets/images/toolbar/SignInLogIn.svg';
 import {styleForToolbar} from "./ToolBarStyle";
 import DropDownPage from "../DropDownPage/DropDownPage";
+import LanguageMenuContainer from "./LanguageMenu/LanguageMenuContainer";
 
 let ToolBar = (props) => {
 
@@ -42,7 +43,7 @@ let ToolBar = (props) => {
     return (
         <div className={props.scrolledToolbar ? styleFor.toolbarScrolled : styleFor.toolbarDefault}>
             <nav className={styleFor.toolbar_navigation}>
-                <div className={styleFor.toolbar_logo}><img src={logo} alt={'logo'}/></div>
+                <div className={styleFor.toolbar_logo}><span dangerouslySetInnerHTML={{__html: props.logo}}/></div>
                 <div className={styleFor.toolbar_navigation_spacerBetweenLogoNavList}/>
                 <div className={styleFor.toolbar_navigation_items}>
                     <ul>
@@ -70,20 +71,20 @@ let ToolBar = (props) => {
                 </div>
                 <div className={styleFor.toolbar_navigation_spacerBetweenListLanguages}/>
                 <div className={styleFor.toolbar_langMenu}>
-                    <LanguageMenu menuStyle={'drop-down'}/>
+                    <LanguageMenuContainer menuStyle={'drop-down'}/>
                 </div>
                 <div className={styleFor.toolbar_controls_list_items}>
                     <ul>
                         <li>
-                            <img src={calc} alt={'add'} onClick={toggleDropDownPage}/>
+                            <span dangerouslySetInnerHTML={{__html: props.calc}} onClick={toggleDropDownPage}/>
                         </li>
                         <li>
-                            <img src={SignInLogIn} alt={'signIn'} />
+                            <span dangerouslySetInnerHTML={{__html: props.signInLogIn}}/>
                         </li>
                     </ul>
                 </div>
                 <div className={styleFor.toolbar_sideMenuButton}>
-                    <SideButton/>
+                    <SideButton burgerIcon={props.burgerIcon} xIcon={props.xIcon} copyright={props.copyright}/>
                 </div>
             </nav>
             {!open

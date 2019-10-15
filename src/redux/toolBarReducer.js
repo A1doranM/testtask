@@ -1,3 +1,5 @@
+import SVGjson from '../json/SVGjson';
+
 const INIT_APP_BAR = 'INIT_APP_BAR';
 const SWITCH_CURRENT_LANGUAGE = 'SWITCH_CURRENT_LANGUAGE';
 
@@ -35,6 +37,7 @@ let initialState = {
         title_EN: "LOG IN"
     },
 
+    SVGjson: SVGjson,
     currentLanguage: 'EN'
 };
 

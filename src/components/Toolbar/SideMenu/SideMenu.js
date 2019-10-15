@@ -60,11 +60,7 @@ let SideMenu = (props) => {
         <div>
             <div className={styleFor.sideMenu_header}>
                 <div className={styleFor.sideMenu_userName}>{SideMenuData.userName}</div>
-                <img src={closeIcon}
-                     onClick={props.handleDrawerToggle}
-                     className={styleFor.sideMenu_close}
-                     alt={'user name'}
-                />
+                <span dangerouslySetInnerHTML={{__html: props.xIcon}} onClick={props.handleDrawerToggle}/>
             </div>
             <div>
                 <List>
@@ -180,7 +176,7 @@ let SideMenu = (props) => {
                     <LanguageMenu menuStyle={'horizontal'}/>
                 </div>
                 <div className={styleFor.sideMenu_footer_copyright}>
-                    <img src={copyright} alt={'Copyright FHD'}/>
+                    <span dangerouslySetInnerHTML={{__html: props.copyright}}/>
                 </div>
             </div>
         </div>

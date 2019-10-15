@@ -1,7 +1,8 @@
 import React from 'react';
-import logo from '../../../assets/images/toolbar/logo.svg';
-import LanguageMenu from "../LanguageMenu/LanguageMenu";
+
 import {styleForFooter} from "./FooterStyle";
+import SVGjson from "../../../json/SVGjson"
+import LanguageMenuContainer from "../LanguageMenu/LanguageMenuContainer";
 
 let Footer = (props) => {
     let styleFor = styleForFooter();
@@ -9,10 +10,13 @@ let Footer = (props) => {
     return (
         <footer className={styleFor.footer}>
             <nav className={styleFor.footer_body}>
-                <div className={styleFor.footer_logo}><img src={logo} alt={'logo'}/></div>
+                {/*!!!!!!!!!!!!!!!!!!!!!!! ПОМЕНЯТЬ ЭТО ГОВНО !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/}
+                {/*                                                                       |*/}
+                {/*                                                                       V*/}
+                <div className={styleFor.footer_logo}><span dangerouslySetInnerHTML={{__html: SVGjson.icons.logo}}/></div>
                 <div className={styleFor.footer_body_spacerBetweenLogoLangMenu}/>
                 <div className={styleFor.footer_langMenu}>
-                    <LanguageMenu menuStyle={'drop-down'}/>
+                    <LanguageMenuContainer menuStyle={'drop-down'}/>
                 </div>
             </nav>
         </footer>
