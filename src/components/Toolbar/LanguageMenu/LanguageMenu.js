@@ -1,6 +1,4 @@
 import React from 'react';
-import language from '../../../assets/images/languageMenu/languages.svg';
-import arrow from '../../../assets/images/languageMenu/arrow.svg';
 import {LanguageButton, LanguageDropDownMenu, LanguageMenuItem, styleForLanguageMenu} from "./LanguageMenuStyles";
 
 export default function LanguageMenu(props) {

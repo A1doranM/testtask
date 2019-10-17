@@ -4,9 +4,7 @@ import {Collapse, List, ListItem, ListItemIcon, Typography} from '@material-ui/c
 import MenuIcon from '@material-ui/icons/Menu';
 import ExpandLess from '@material-ui/icons/esm/ExpandLess';
 import ExpandMore from '@material-ui/icons/esm/ExpandMore';
-import closeIcon from '../../../assets/images/sideMenu/x.svg';
 import LanguageMenu from '../LanguageMenu/LanguageMenu';
-import copyright from '../../../assets/images/copyright/Copyringht FHD.svg'
 
 let SideMenu = (props) => {
     let SideMenuData = {

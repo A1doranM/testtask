@@ -1,7 +1,6 @@
 import SVGjson from '../json/SVGjson';
 
 const INIT_PERSONAL_CABINET = 'INIT_PERSONAL_CABINET';
-const SORT_BY_KEY = 'SORT_BY_KEY';
 
 let initialState = {
     SVGjson: SVGjson,

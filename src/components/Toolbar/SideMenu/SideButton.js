@@ -1,7 +1,6 @@
 import React from 'react'
 import {Drawer, Hidden} from "@material-ui/core/es/index";
 import SideMenu from "./SideMenu";
-import sideMenuButton from '../../../assets/images/sideMenu/burger.svg';
 
 let SideButton = (props) => {
     const {container} = props;

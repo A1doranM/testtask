@@ -1,7 +1,7 @@
 import React from 'react';
 import PersonalCabinet from "./PersonalCabinet";
 import {connect} from 'react-redux';
-import {initPersonalCabinetActionCreator} from "../../redux/PersonalCabinetReducer";
+import {initPersonalCabinetActionCreator} from "../../redux/personalCabinetReducer";
 
 class PersonalCabinetContainer extends React.Component {
     componentDidMount(){
