@@ -5,7 +5,9 @@ import {connect} from 'react-redux';
 class OperatorCabinetContainer extends React.Component {
     render() {
         return (
-            <OperatorCabinet icons={this.props.icons} operatorID={this.props.operatorID}/>
+            <OperatorCabinet icons={this.props.icons}
+                             operatorID={this.props.operatorID}
+                             operatorName={this.props.operatorName}/>
         )
     }
 }
@@ -29,8 +31,7 @@ let mapStateToProps = (state) => {
 };
 
 let mapDispatchToProps = (dispatch) => {
-    return {
-    }
+    return {}
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(OperatorCabinetContainer);

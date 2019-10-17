@@ -4,6 +4,7 @@ import ToolBarContainer from "../Toolbar/ToolBarContainer";
 import {NavLink} from "react-router-dom";
 import {styleForOperatorCabinet} from "./OperatorCabinetStyle";
 import TableAllTrackersContainer from "../TableAllTrackers/TableAllTrackersContainer";
+import image from '../../assets/images/operatorCabinet/operator.svg';
 
 
 let OperatorCabinet = (props) => {
@@ -42,53 +43,60 @@ let OperatorCabinet = (props) => {
                             <div className={styleFor.mainWrapper_operatorWrapper_operatorInfo}>
                                 <div className={styleFor.mainWrapper_operatorWrapper_operatorInfo_padding}>
                                     <div className={styleFor.mainWrapper_operatorWrapper_operatorInfo_head}>
-                                        <div>
-                                            <span dangerouslySetInnerHTML={{__html: props.icons.operator}}/>
+                                        <div className={styleFor.mainWrapper_operatorWrapper_operatorInfo_head_image}>
+                                            <img src={image} alt={'none'}/>
+                                            {/*<span dangerouslySetInnerHTML={{__html: props.icons.operator}}/>*/}
                                         </div>
                                         <div>
-                                            <p>{props.operatorName}</p>
-                                            <p>id <span>{props.operatorID}</span></p>
+                                            <p className={styleFor.mainWrapper_operatorWrapper_operatorInfo_head_name}>{props.operatorName}</p>
+                                            <p className={styleFor.mainWrapper_operatorWrapper_operatorInfo_head_id}>
+                                                id <span>{props.operatorID}</span>
+                                            </p>
                                         </div>
                                     </div>
-                                    <div className={styleFor.mainWrapper_operatorWrapper_operatorInfo_center}></div>
+                                    <div className={styleFor.mainWrapper_operatorWrapper_operatorInfo_center}>
+                                        <p className={styleFor.mainWrapper_operatorWrapper_operatorInfo_center_title}>
+                                            User
+                                        </p>
+                                    </div>
                                     <div className={styleFor.mainWrapper_operatorWrapper_operatorInfo_center_hidden}></div>
                                 </div>
                                 <ul className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list}>
-                                    {/*<li className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_item + ' ' + styleFor.list_createTracker}>*/}
-                                    {/*    <span dangerouslySetInnerHTML={{__html: props.icons.plusIcon}}*/}
-                                    {/*          className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>*/}
-                                    {/*    <NavLink to={''}>{PersonalCabinetData.operatorInfo.createTracker}</NavLink>*/}
-                                    {/*</li>*/}
-                                    {/*<li className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_item}>*/}
-                                    {/*    <span dangerouslySetInnerHTML={{__html: props.icons.transportStickerIcon}}*/}
-                                    {/*          className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>*/}
-                                    {/*    <NavLink to={''}>{PersonalCabinetData.operatorInfo.transportSticker}</NavLink>*/}
-                                    {/*</li>*/}
-                                    {/*<li className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_item}>*/}
-                                    {/*    <span dangerouslySetInnerHTML={{__html: props.icons.recipientContactsIcon}}*/}
-                                    {/*          className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>*/}
-                                    {/*    <NavLink to={''}>{PersonalCabinetData.operatorInfo.recipientContacts}</NavLink>*/}
-                                    {/*</li>*/}
-                                    {/*<li className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_item}>*/}
-                                    {/*    <span dangerouslySetInnerHTML={{__html: props.icons.deliveryAddressIcon}}*/}
-                                    {/*          className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>*/}
-                                    {/*    <NavLink to={''}>{PersonalCabinetData.operatorInfo.deliveryAddress}</NavLink>*/}
-                                    {/*</li>*/}
-                                    {/*<li className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_item}>*/}
-                                    {/*    <span dangerouslySetInnerHTML={{__html: props.icons.paymentCardsIcon}}*/}
-                                    {/*          className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>*/}
-                                    {/*    <NavLink to={''}>{PersonalCabinetData.operatorInfo.paymentCards}</NavLink>*/}
-                                    {/*</li>*/}
-                                    {/*<li className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_item}>*/}
-                                    {/*    <span dangerouslySetInnerHTML={{__html: props.icons.profileSettingsIcon}}*/}
-                                    {/*          className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>*/}
-                                    {/*    <NavLink to={''}>{PersonalCabinetData.operatorInfo.profileSettings}</NavLink>*/}
-                                    {/*</li>*/}
-                                    {/*<li className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_item}>*/}
-                                    {/*    <span dangerouslySetInnerHTML={{__html: props.icons.markFriendIcon}}*/}
-                                    {/*          className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>*/}
-                                    {/*    <NavLink to={''}>{PersonalCabinetData.operatorInfo.markFriend}</NavLink>*/}
-                                    {/*</li>*/}
+                                    <li className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_item + ' ' + styleFor.list_createTracker}>
+                                        <span dangerouslySetInnerHTML={{__html: props.icons.plusIcon}}
+                                              className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>
+                                        <NavLink to={''}>{OperatorCabinetData.operatorInfo.createTracker}</NavLink>
+                                    </li>
+                                    <li className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_item}>
+                                        <span dangerouslySetInnerHTML={{__html: props.icons.transportStickerIcon}}
+                                              className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>
+                                        <NavLink to={''}>{OperatorCabinetData.operatorInfo.transportSticker}</NavLink>
+                                    </li>
+                                    <li className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_item}>
+                                        <span dangerouslySetInnerHTML={{__html: props.icons.recipientContactsIcon}}
+                                              className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>
+                                        <NavLink to={''}>{OperatorCabinetData.operatorInfo.recipientContacts}</NavLink>
+                                    </li>
+                                    <li className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_item}>
+                                        <span dangerouslySetInnerHTML={{__html: props.icons.deliveryAddressIcon}}
+                                              className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>
+                                        <NavLink to={''}>{OperatorCabinetData.operatorInfo.deliveryAddress}</NavLink>
+                                    </li>
+                                    <li className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_item}>
+                                        <span dangerouslySetInnerHTML={{__html: props.icons.paymentCardsIcon}}
+                                              className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>
+                                        <NavLink to={''}>{OperatorCabinetData.operatorInfo.paymentCards}</NavLink>
+                                    </li>
+                                    <li className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_item}>
+                                        <span dangerouslySetInnerHTML={{__html: props.icons.profileSettingsIcon}}
+                                              className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>
+                                        <NavLink to={''}>{OperatorCabinetData.operatorInfo.profileSettings}</NavLink>
+                                    </li>
+                                    <li className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_item}>
+                                        <span dangerouslySetInnerHTML={{__html: props.icons.markFriendIcon}}
+                                              className={styleFor.mainWrapper_operatorWrapper_operatorInfo_list_icon}/>
+                                        <NavLink to={''}>{OperatorCabinetData.operatorInfo.markFriend}</NavLink>
+                                    </li>
                                 </ul>
                             </div>
                         </div>

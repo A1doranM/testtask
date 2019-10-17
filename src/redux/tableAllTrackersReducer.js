@@ -1,5 +1,3 @@
-import SVGjson from '../json/SVGjson';
-
 const INIT_TABLE_ALL_TRACKERS = 'INIT_TABLE_ALL_TRACKERS';
 
 let initialState = {

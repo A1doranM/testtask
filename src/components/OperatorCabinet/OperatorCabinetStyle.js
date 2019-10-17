@@ -31,7 +31,52 @@ export const styleForOperatorCabinet = makeStyles(theme => ({
     mainWrapper_operatorWrapper_operatorInfo: {},
 
     mainWrapper_operatorWrapper_operatorInfo_padding: {
+        paddingBottom: '20px',
+    },
 
+    mainWrapper_operatorWrapper_operatorInfo_head: {
+        padding: '15px 30px 20px',
+        background: '#eaf0f2',
+        display: 'flex',
+        verticalAlign: 'middle',
+    },
+
+    mainWrapper_operatorWrapper_operatorInfo_head_image: {
+        width: '42px',
+        height: '42px',
+        overflow: 'hidden',
+        borderRadius: '50%',
+        marginRight: '10px',
+        flex: '0 0 auto',
+    },
+
+    mainWrapper_operatorWrapper_operatorInfo_head_name: {
+        fontFamily: 'Roboto',
+        fontStyle: 'normal',
+        fontWeight: '700',
+        fontSize: '18px',
+        lineHeight: '24px',
+        margin: '0',
+    },
+
+    mainWrapper_operatorWrapper_operatorInfo_head_id: {
+        margin: '0 0 10px',
+    },
+
+    mainWrapper_operatorWrapper_operatorInfo_center: {
+        display: 'flex',
+        justifyContent: 'center',
+    },
+
+    mainWrapper_operatorWrapper_operatorInfo_center_title: {
+        display: 'inline-block',
+        margin: '0 auto',
+        textAlign: 'center',
+        color: '#fff',
+        borderRadius: '40px',
+        backgroundColor: '#f1774f',
+        padding: '8px 24px',
+        transform: 'translateY(-50%)',
     },
 
     mainWrapper_operatorWrapper_operatorInfo_list: {
@@ -60,11 +105,6 @@ export const styleForOperatorCabinet = makeStyles(theme => ({
 
     mainWrapper_operatorWrapper_operatorInfo_list_icon: {
         marginRight: '20px',
-        // '& svg': {
-        //     '& path, rect': {
-        //         fill: 'red',
-        //     },
-        // }
     },
 
     list_createTracker: {
