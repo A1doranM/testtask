@@ -15,15 +15,15 @@ class OperatorCabinetContainer extends React.Component {
 let mapStateToProps = (state) => {
     return {
         icons: {
-            plusIcon: state.operatorCabinet.SVGjson.icons.plus,
             transportStickerIcon: state.operatorCabinet.SVGjson.icons.transportSticker,
-            recipientContactsIcon: state.operatorCabinet.SVGjson.icons.recipientContacts,
-            deliveryAddressIcon: state.operatorCabinet.SVGjson.icons.deliveryAddress,
-            paymentCardsIcon: state.operatorCabinet.SVGjson.icons.paymentCards,
-            profileSettingsIcon: state.operatorCabinet.SVGjson.icons.profileSettings,
+            contactsIcon: state.operatorCabinet.SVGjson.icons.recipientContacts,
+            mapIcon: state.operatorCabinet.SVGjson.icons.deliveryAddress,
+            FAQIcon: state.operatorCabinet.SVGjson.icons.paymentCards,
+            settingsIcon: state.operatorCabinet.SVGjson.icons.profileSettings,
             pen: state.operatorCabinet.SVGjson.icons.pen,
             mail: state.operatorCabinet.SVGjson.icons.mail,
             operator: state.personalCabinet.SVGjson.icons.operator,
+            round: state.personalCabinet.SVGjson.icons.round,
         },
         operatorID: state.operatorCabinet.operatorID,
         operatorName: state.operatorCabinet.operatorName,

@@ -13,14 +13,14 @@ let generalStyleForListItems = {
 export const styleForOperatorCabinet = makeStyles(theme => ({
     mainWrapper: {
         minWidth: '100%',
-        height: '100%',
+        minHeight: '100vh',
         boxSizing: 'border-box',
         marginTop: '70px',
     },
 
     mainWrapper_operatorWrapper: {
         overflowY: 'auto',
-        minHeight: '100%',
+        height: '100vh',
         background: '#fbfbfb',
         // borderRight: '1px solid #f5f5f5',
         boxShadow: '0px -6px 20px rgba(0, 0, 0, 0.25)',
@@ -29,10 +29,6 @@ export const styleForOperatorCabinet = makeStyles(theme => ({
     },
 
     mainWrapper_operatorWrapper_operatorInfo: {},
-
-    mainWrapper_operatorWrapper_operatorInfo_padding: {
-        paddingBottom: '20px',
-    },
 
     mainWrapper_operatorWrapper_operatorInfo_head: {
         padding: '15px 30px 20px',
@@ -68,15 +64,35 @@ export const styleForOperatorCabinet = makeStyles(theme => ({
         justifyContent: 'center',
     },
 
+    mainWrapper_operatorWrapper_operatorInfo_head_list: {
+        marginTop: '0',
+        paddingLeft: '25px',
+        listStyle: 'none'
+    },
+
+    mainWrapper_operatorWrapper_operatorInfo_head_list_item: {
+        fontSize: '16px',
+        marginBottom: '15px',
+
+    },
+
     mainWrapper_operatorWrapper_operatorInfo_center_title: {
         display: 'inline-block',
+        width: '60%',
         margin: '0 auto',
         textAlign: 'center',
+        fontSize: '14px',
         color: '#fff',
         borderRadius: '40px',
         backgroundColor: '#f1774f',
         padding: '8px 24px',
         transform: 'translateY(-50%)',
+    },
+
+    mainWrapper_operatorWrapper_operatorInfo_center_title_bottom: {
+        color: 'black',
+        marginTop: '20px',
+        backgroundColor: '#fcf4db',
     },
 
     mainWrapper_operatorWrapper_operatorInfo_list: {
