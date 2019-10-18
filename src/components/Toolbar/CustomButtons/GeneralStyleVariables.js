@@ -17,4 +17,5 @@ export const CustomButton = styled(Button)({
     border: '1.8px solid #679BA8',
     boxSizing: 'border-box',
     borderRadius: '3px',
+    display: 'flex',
 });

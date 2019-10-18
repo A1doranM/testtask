@@ -15,6 +15,7 @@ const Colored = styled(CustomButton)({
     background: LocalVariables.backgroundColor,
     borderRadius: `${LocalVariables.borderRadius}rem`,
     padding: LocalVariables.padding,
+    borderStyle: 'none',
     '&:hover': {
         backgroundColor: LocalVariables.backgroundColor
     },

@@ -24,6 +24,7 @@ let mapStateToProps = (state) => {
             mail: state.operatorCabinet.SVGjson.icons.mail,
             operator: state.personalCabinet.SVGjson.icons.operator,
             round: state.personalCabinet.SVGjson.icons.round,
+            filter: state.personalCabinet.SVGjson.icons.filter,
         },
         operatorID: state.operatorCabinet.operatorID,
         operatorName: state.operatorCabinet.operatorName,
