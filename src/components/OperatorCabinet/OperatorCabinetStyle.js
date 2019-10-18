@@ -187,7 +187,7 @@ export const styleForOperatorCabinet = makeStyles(theme => ({
     mainWrapper_filterSearch_wrapper_filterButton_wrapper: {
         display: 'inline-block',
     },
-    //delete this commit
+    
     mainWrapper_filterSearch_wrapper_searchArea_wrapper: {
         display: 'inline-block',
     },
