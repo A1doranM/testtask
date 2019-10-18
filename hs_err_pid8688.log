@@ -1,0 +1,196 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 134217728 bytes for Failed to commit area from 0x0000000081800000 to 0x0000000089800000 of length 134217728.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (c:/BuildAgent/work/494cbf65e275b67e/src/hotspot/os/windows/os_windows.cpp:3272), pid=8688, tid=9632
+#
+# JRE version:  (11.0.3+12) (build )
+# Java VM: OpenJDK 64-Bit Server VM (11.0.3+12-b304.10, mixed mode, aot, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: org.jetbrains.git4idea.http.GitAskPassApp Username for 'https://github.com': 
+
+Host: Intel(R) Core(TM) i7-3610QM CPU @ 2.30GHz, 8 cores, 7G,  Windows 10 , 64 bit Build 18362 (10.0.18362.329)
+Time: Fri Oct 18 22:19:18 2019 RTZ 2 (ceia) elapsed time: 0 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001f9fea59800):  JavaThread "Unknown thread" [_thread_in_vm, id=9632, stack(0x0000008af8700000,0x0000008af8800000)]
+
+Stack: [0x0000008af8700000,0x0000008af8800000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x5da77a]
+V  [jvm.dll+0x70b9c9]
+V  [jvm.dll+0x70cee8]
+V  [jvm.dll+0x70d5b3]
+V  [jvm.dll+0x23ddc8]
+V  [jvm.dll+0x5d7ef4]
+V  [jvm.dll+0x5ccfc5]
+V  [jvm.dll+0x2fa44b]
+V  [jvm.dll+0x2fa3ba]
+V  [jvm.dll+0x2fa292]
+V  [jvm.dll+0x2ff156]
+V  [jvm.dll+0x3474c3]
+V  [jvm.dll+0x347bc6]
+V  [jvm.dll+0x3475c3]
+V  [jvm.dll+0x2d4f68]
+V  [jvm.dll+0x2d6107]
+V  [jvm.dll+0x6eabf7]
+V  [jvm.dll+0x6ec38c]
+V  [jvm.dll+0x354c29]
+V  [jvm.dll+0x6d28ae]
+V  [jvm.dll+0x3bd363]
+V  [jvm.dll+0x3bf7a1]
+C  [java.exe+0x3763]
+C  [java.exe+0x17a0c]
+C  [KERNEL32.DLL+0x17bd4]
+C  [ntdll.dll+0x6ced1]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x000001f9fc806b30, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000001f9fea6c000 GCTaskThread "GC Thread#0" [stack: 0x0000008af8800000,0x0000008af8900000] [id=7208]
+  0x000001f9fea9c000 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000008af8900000,0x0000008af8a00000] [id=8660]
+  0x000001f9fea9e800 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000008af8a00000,0x0000008af8b00000] [id=5672]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007fff28025507]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000001f9fea55460] Heap_lock - owner thread: 0x000001f9fea59800
+
+Heap address: 0x0000000081800000, size: 2024 MB, Compressed Oops mode: Non-zero based: 0x0000000081800000
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff6d48b0000 - 0x00007ff6d48f7000 	C:\Program Files\JetBrains\WebStorm 2019.2\jbr\bin\java.exe
+0x00007fff5e560000 - 0x00007fff5e750000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007fff5dcb0000 - 0x00007fff5dd62000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007fff5c210000 - 0x00007fff5c4b3000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007fff5ceb0000 - 0x00007fff5d044000 	C:\WINDOWS\System32\USER32.dll
+0x00007fff5bf10000 - 0x00007fff5bf31000 	C:\WINDOWS\System32\win32u.dll
+0x00007fff5df60000 - 0x00007fff5df86000 	C:\WINDOWS\System32\GDI32.dll
+0x00007fff5c050000 - 0x00007fff5c1e4000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007fff5be70000 - 0x00007fff5bf0e000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007fff5bcf0000 - 0x00007fff5bdea000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007fff51910000 - 0x00007fff51b95000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.18362.418_none_e6c6b287130d565d\COMCTL32.dll
+0x00007fff5e470000 - 0x00007fff5e50e000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007fff5cb10000 - 0x00007fff5ce46000 	C:\WINDOWS\System32\combase.dll
+0x00007fff5c8b0000 - 0x00007fff5c9d0000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007fff5b4f0000 - 0x00007fff5b570000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007fff5e390000 - 0x00007fff5e3be000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007fff576d0000 - 0x00007fff576e7000 	C:\Program Files\JetBrains\WebStorm 2019.2\jbr\bin\vcruntime140.dll
+0x00007fff445e0000 - 0x00007fff4467d000 	C:\Program Files\JetBrains\WebStorm 2019.2\jbr\bin\msvcp140.dll
+0x00007fff27d40000 - 0x00007fff287f7000 	C:\Program Files\JetBrains\WebStorm 2019.2\jbr\bin\server\jvm.dll
+0x00007fff5c800000 - 0x00007fff5c8a3000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007fff5dd70000 - 0x00007fff5de07000 	C:\WINDOWS\System32\sechost.dll
+0x00007fff5c9d0000 - 0x00007fff5c9d8000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007fff58f00000 - 0x00007fff58f24000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007fff535a0000 - 0x00007fff535aa000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007fff516d0000 - 0x00007fff516d9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007fff5df90000 - 0x00007fff5dfff000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007fff58ed0000 - 0x00007fff58efd000 	C:\WINDOWS\SYSTEM32\winmmbase.dll
+0x00007fff5bdf0000 - 0x00007fff5be3a000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x00007fff5b440000 - 0x00007fff5b451000 	C:\WINDOWS\System32\kernel.appcore.dll
+0x00007fff516b0000 - 0x00007fff516c1000 	C:\Program Files\JetBrains\WebStorm 2019.2\jbr\bin\verify.dll
+0x00007fff4b5d0000 - 0x00007fff4b7c4000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007fff4b4b0000 - 0x00007fff4b4da000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007fff51680000 - 0x00007fff516a9000 	C:\Program Files\JetBrains\WebStorm 2019.2\jbr\bin\java.dll
+0x00007fff51660000 - 0x00007fff51677000 	C:\Program Files\JetBrains\WebStorm 2019.2\jbr\bin\zip.dll
+0x00007fff51650000 - 0x00007fff5165b000 	C:\Program Files\JetBrains\WebStorm 2019.2\jbr\bin\jimage.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\JetBrains\WebStorm 2019.2\jbr\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.18362.418_none_e6c6b287130d565d;C:\Program Files\JetBrains\WebStorm 2019.2\jbr\bin\server
+
+VM Arguments:
+java_command: org.jetbrains.git4idea.http.GitAskPassApp Username for 'https://github.com': 
+java_class_path (initial): C:/Program Files/JetBrains/WebStorm 2019.2/plugins/git4idea/lib/git4idea-rt.jar;C:/Program Files/JetBrains/WebStorm 2019.2/lib/xmlrpc-2.0.1.jar;C:/Program Files/JetBrains/WebStorm 2019.2/lib/commons-codec-1.12.jar;C:/Program Files/JetBrains/WebStorm 2019.2/lib/util.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 134217728                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 2122317824                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5835340                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122911450                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122911450                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+PATH=C:\Program Files\Git\mingw64\libexec\git-core;C:\Program Files\Git\mingw64\libexec\git-core;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\Igor\bin;C:\Program Files\JetBrains\WebStorm 2019.2\jbr\bin;C:\Program Files\JetBrains\WebStorm 2019.2\jbr\bin\server;D:\Python 3\Scripts;D:\Python 3;C:\ProgramData\Anaconda3;C:\ProgramData\Anaconda3\Library\mingw-w64\bin;C:\ProgramData\Anaconda3\Library\usr\bin;C:\ProgramData\Anaconda3\Library\bin;C:\ProgramData\Anaconda3\Scripts;C:\Program Files\Microsoft MPI\Bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\Program Files\Microsoft SQL Server\130\Tools\Binn;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\MySQL\MySQL Utilities 1.6;C:\Program Files\Git\cmd;C:\WINDOWS\System32\OpenSSH;C:\Window;C:\Windows\system32";C:\Program Files\nodejs;C:\Users\Igor\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA 2018.3.1\bin;C:\Program Files\JetBrains\WebStorm 2019.2\bin;C:\Users\Igor\AppData\Roaming\npm
+USERNAME=Igor
+DISPLAY=:0.0
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 58 Stepping 9, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10 , 64 bit Build 18362 (10.0.18362.329)
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 58 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, clmul, erms, ht, tsc, tscinvbit, tscinv
+
+Memory: 4k page, system-wide physical 8091M (1250M free)
+TotalPageFile size 8091M (AvailPageFile size 127M)
+current process WorkingSet (physical memory assigned to process): 9M, peak: 9M
+current process commit charge ("private bytes"): 60M, peak: 187M
+
+vm_info: OpenJDK 64-Bit Server VM (11.0.3+12-b304.10) for windows-amd64 JRE (11.0.3+12-b304.10), built on Jun 25 2019 07:10:45 by "" with MS VC++ 14.0 (VS2015)
+
+END.
