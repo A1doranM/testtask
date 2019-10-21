@@ -3,7 +3,7 @@ import {styleForAddressList, styleForContacts} from "./ContactsStyle";
 import ToolBarContainer from "../Toolbar/ToolBarContainer";
 import Footer from "../Toolbar/Footer/Footer";
 import Grid from "@material-ui/core/Grid";
-import ButtonColored from "../Toolbar/CustomButtons/ColoredButton/ButtonColored";
+import ButtonColored from "../CustomButtons/ColoredButton/ButtonColored";
 import map_china from '../../assets/images/contacts/map_china.jpg'
 import map_usa from '../../assets/images/contacts/map_usa.jpg'
 import map_ukraine from '../../assets/images/contacts/map_ukraine.jpg'

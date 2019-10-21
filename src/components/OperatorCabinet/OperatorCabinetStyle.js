@@ -13,7 +13,7 @@ let generalStyleForListItems = {
 export const filterButtonStyle = {
     boxShadow: 'none',
     padding: '0 15px',
-    width: '130px',
+    width: '100%',
     height: '46px',
     borderRadius: '3px',
     background: '#F1774F',
@@ -181,7 +181,8 @@ export const styleForOperatorCabinet = makeStyles(theme => ({
         paddingLeft: '30px',
         paddingRight: '30px',
         paddingTop: '20px',
-        paddingBottom: '40px'
+        paddingBottom: '20px',
+        border: '1px solid #F2F2F2',
     },
 
     mainWrapper_filterSearch_wrapper: {
@@ -192,7 +193,18 @@ export const styleForOperatorCabinet = makeStyles(theme => ({
 
     contacts_sectionContactWithUs_textarea: {
         height: '100%',
-        padding: '0'
+        width: '100%',
+        padding: '3 34px 0 20px',
+        background: '#F8FAFB',
+        border: '1px solid #D4DBDC',
+        boxSizing: 'border-box',
+        borderRadius: '3px',
+        fontFamily: 'Roboto',
+        fontStyle: 'normal',
+        fontWeight: 'normal',
+        fontSize: '16px',
+        lineHeight: '19px',
+        color: '#BDBDBD',
     },
 
     //RESPONSIVE

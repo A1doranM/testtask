@@ -4,7 +4,7 @@ import ToolBarContainer from "../Toolbar/ToolBarContainer";
 import {NavLink} from "react-router-dom";
 import {filterButtonStyle, styleForOperatorCabinet} from "./OperatorCabinetStyle";
 import TableAllTrackersContainer from "../TableAllTrackers/TableAllTrackersContainer";
-import ButtonColored from "../Toolbar/CustomButtons/ColoredButton/ButtonColored";
+import ButtonColored from "../CustomButtons/ColoredButton/ButtonColored";
 
 
 let OperatorCabinet = (props) => {
@@ -128,26 +128,42 @@ let OperatorCabinet = (props) => {
                     </Grid>
                     <Grid item xs={12} lg={10}>
                         <div className={styleFor.mainWrapper_tableControls_filterSearch_padding}>
-                            <div className={styleFor.mainWrapper_filterSearch_wrapper}>
+                                <Grid container
+                                      spacing={4}>
+                                    <Grid item lg={2}>
+                                        <ButtonColored style={filterButton}>{OperatorCabinetData.operatorInfo.filter}
+                                            <span dangerouslySetInnerHTML={{__html: props.icons.filter}}/>
+                                        </ButtonColored>
+                                    </Grid>
+                                    <Grid item lg={10}>
+                                   <textarea placeholder={OperatorCabinetData.operatorInfo.search}
+                                             className={styleFor.contacts_sectionContactWithUs_textarea}/>
+                                    </Grid>
+                                </Grid>
+                        </div>
+                        <div className={styleFor.mainWrapper_tableControls_filterSearch_padding}>
+                            <Grid container
+                                  alignItems="center"
+                                  spacing={4}>
+                                <Grid item lg={2}>
                                     <ButtonColored style={filterButton}>{OperatorCabinetData.operatorInfo.filter}
                                         <span dangerouslySetInnerHTML={{__html: props.icons.filter}}/>
                                     </ButtonColored>
-
-                                    <textarea placeholder={OperatorCabinetData.operatorInfo.search}
-                                              className={styleFor.contacts_sectionContactWithUs_textarea}/>
-
-                            </div>
-                            <div className={styleFor.mainWrapper_tableControls_wrapper}>
-                                <div className={styleFor.mainWrapper_tableControls_radioButton}>
-
-                                </div>
-                                <div className={styleFor.mainWrapper_tableControls_radioButton}>
-
-                                </div>
-                                <div className={styleFor.mainWrapper_tableControls_radioButton}>
-
-                                </div>
-                            </div>
+                                </Grid>
+                                <Grid item lg={2}>
+                                    <ButtonColored style={filterButton}>{OperatorCabinetData.operatorInfo.filter}
+                                        <span dangerouslySetInnerHTML={{__html: props.icons.filter}}/>
+                                    </ButtonColored>
+                                </Grid>
+                                <Grid item lg={2}>
+                                    <ButtonColored style={filterButton}>{OperatorCabinetData.operatorInfo.filter}
+                                        <span dangerouslySetInnerHTML={{__html: props.icons.filter}}/>
+                                    </ButtonColored>
+                                </Grid>
+                                <Grid item lg={2}>
+                                    total trackers count: 2000
+                                </Grid>
+                            </Grid>
                         </div>
                         <div className={styleFor.mainWrapper_trackersTableWrapper}>
                             <TableAllTrackersContainer operatorID={props.operatorID} pageSize={2}/>
@@ -160,3 +176,43 @@ let OperatorCabinet = (props) => {
 };
 
 export default OperatorCabinet;
+
+{/*<div className={styleFor.mainWrapper_tableControls_filterSearch_padding}>*/
+}
+{/*    <div className={styleFor.mainWrapper_filterSearch_wrapper}>*/
+}
+{/*        <ButtonColored style={filterButton}>{OperatorCabinetData.operatorInfo.filter}*/
+}
+{/*            <span dangerouslySetInnerHTML={{__html: props.icons.filter}}/>*/
+}
+{/*        </ButtonColored>*/
+}
+
+{/*        <textarea placeholder={OperatorCabinetData.operatorInfo.search}*/
+}
+{/*                  className={styleFor.contacts_sectionContactWithUs_textarea}/>*/
+}
+
+{/*    </div>*/
+}
+{/*    <div className={styleFor.mainWrapper_tableControls_wrapper}>*/
+}
+{/*        <div className={styleFor.mainWrapper_tableControls_radioButton}>*/
+}
+
+{/*        </div>*/
+}
+{/*        <div className={styleFor.mainWrapper_tableControls_radioButton}>*/
+}
+
+{/*        </div>*/
+}
+{/*        <div className={styleFor.mainWrapper_tableControls_radioButton}>*/
+}
+
+{/*        </div>*/
+}
+{/*    </div>*/
+}
+{/*</div>*/
+}
