@@ -14,6 +14,7 @@ export const filterButtonStyle = {
     boxShadow: 'none',
     padding: '0 15px',
     width: '130px',
+    height: '46px',
     borderRadius: '3px',
     background: '#F1774F',
     fontSize: '14px',
@@ -177,19 +178,21 @@ export const styleForOperatorCabinet = makeStyles(theme => ({
     //TRACKERS TABLE TAB
     mainWrapper_tableControls_filterSearch_padding: {
         display: 'flex',
-        width: '100%',
         paddingLeft: '30px',
         paddingRight: '30px',
         paddingTop: '20px',
         paddingBottom: '40px'
     },
 
-    mainWrapper_filterSearch_wrapper_filterButton_wrapper: {
-        display: 'inline-block',
+    mainWrapper_filterSearch_wrapper: {
+        display: 'inherit',
+        flex: '1',
+        justifyContent: 'space-between',
     },
 
-    mainWrapper_filterSearch_wrapper_searchArea_wrapper: {
-        display: 'inline-block',
+    contacts_sectionContactWithUs_textarea: {
+        height: '100%',
+        padding: '0'
     },
 
     //RESPONSIVE

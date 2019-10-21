@@ -129,15 +129,13 @@ let OperatorCabinet = (props) => {
                     <Grid item xs={12} lg={10}>
                         <div className={styleFor.mainWrapper_tableControls_filterSearch_padding}>
                             <div className={styleFor.mainWrapper_filterSearch_wrapper}>
-                                <div className={styleFor.mainWrapper_filterSearch_wrapper_filterButton_wrapper}>
                                     <ButtonColored style={filterButton}>{OperatorCabinetData.operatorInfo.filter}
                                         <span dangerouslySetInnerHTML={{__html: props.icons.filter}}/>
                                     </ButtonColored>
-                                </div>
-                                <div className={styleFor.mainWrapper_filterSearch_wrapper_searchArea_wrapper}>
+
                                     <textarea placeholder={OperatorCabinetData.operatorInfo.search}
                                               className={styleFor.contacts_sectionContactWithUs_textarea}/>
-                                </div>
+
                             </div>
                             <div className={styleFor.mainWrapper_tableControls_wrapper}>
                                 <div className={styleFor.mainWrapper_tableControls_radioButton}>
