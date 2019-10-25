@@ -191,7 +191,7 @@ export const styleForOperatorCabinet = makeStyles(theme => ({
         justifyContent: 'space-between',
     },
 
-    contacts_sectionContactWithUs_textarea: {
+    mainWrapper_tableControls_filterSearch_padding_textarea: {
         height: '100%',
         width: '100%',
         padding: '3 34px 0 20px',
@@ -205,6 +205,32 @@ export const styleForOperatorCabinet = makeStyles(theme => ({
         fontSize: '16px',
         lineHeight: '19px',
         color: '#BDBDBD',
+    },
+
+    mainWrapper_tableControls_filterSearch_padding_title: {
+        fontFamily: 'Roboto',
+        fontSize: '16px',
+    },
+
+    title_unprocessed: {
+        color: '#828282',
+    },
+
+    title_processed: {
+        color: '#27AE60',
+    },
+
+    title_paid: {
+        color: '#F2994A',
+    },
+
+    title_totalCount: {
+        fontSize: '16px',
+        color: '#BDBDBD',
+    },
+
+    mainWrapper_trackersTableWrapper: {
+      padding: '0px 30px'
     },
 
     //RESPONSIVE

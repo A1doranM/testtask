@@ -5,11 +5,17 @@ import {NavLink} from "react-router-dom";
 import {filterButtonStyle, styleForOperatorCabinet} from "./OperatorCabinetStyle";
 import TableAllTrackersContainer from "../TableAllTrackers/TableAllTrackersContainer";
 import ButtonColored from "../CustomButtons/ColoredButton/ButtonColored";
+import {StyledRadio} from "../CustomButtons/RadioButton/StyledRadio";
 
 
 let OperatorCabinet = (props) => {
     let styleFor = styleForOperatorCabinet();
     let filterButton = filterButtonStyle;
+    const [selectedValue, setSelectedValue] = React.useState('a');
+
+    const handleChange = event => {
+        setSelectedValue(event.target.value);
+    };
 
     let OperatorCabinetData = {
         operatorInfo: {
@@ -26,6 +32,7 @@ let OperatorCabinet = (props) => {
                     title: 'Paid',
                     count: 23,
                 },
+                tatalTrackersCount: 'Total trackers count: 2000 '
             },
             trackers: {
                 title: 'Trackers',
@@ -128,40 +135,71 @@ let OperatorCabinet = (props) => {
                     </Grid>
                     <Grid item xs={12} lg={10}>
                         <div className={styleFor.mainWrapper_tableControls_filterSearch_padding}>
-                                <Grid container
-                                      spacing={4}>
-                                    <Grid item lg={2}>
-                                        <ButtonColored style={filterButton}>{OperatorCabinetData.operatorInfo.filter}
-                                            <span dangerouslySetInnerHTML={{__html: props.icons.filter}}/>
-                                        </ButtonColored>
-                                    </Grid>
-                                    <Grid item lg={10}>
-                                   <textarea placeholder={OperatorCabinetData.operatorInfo.search}
-                                             className={styleFor.contacts_sectionContactWithUs_textarea}/>
-                                    </Grid>
-                                </Grid>
-                        </div>
-                        <div className={styleFor.mainWrapper_tableControls_filterSearch_padding}>
                             <Grid container
-                                  alignItems="center"
                                   spacing={4}>
                                 <Grid item lg={2}>
                                     <ButtonColored style={filterButton}>{OperatorCabinetData.operatorInfo.filter}
                                         <span dangerouslySetInnerHTML={{__html: props.icons.filter}}/>
                                     </ButtonColored>
                                 </Grid>
-                                <Grid item lg={2}>
-                                    <ButtonColored style={filterButton}>{OperatorCabinetData.operatorInfo.filter}
-                                        <span dangerouslySetInnerHTML={{__html: props.icons.filter}}/>
-                                    </ButtonColored>
+                                <Grid item lg={10}>
+                                   <textarea placeholder={OperatorCabinetData.operatorInfo.search}
+                                             className={styleFor.mainWrapper_tableControls_filterSearch_padding_textarea}/>
+                                </Grid>
+                            </Grid>
+                        </div>
+                        <div className={styleFor.mainWrapper_tableControls_filterSearch_padding}>
+                            <Grid container
+                                  alignItems={'center'}
+                                  spacing={1}>
+                                <Grid item>
+                                    <StyledRadio checked={selectedValue === 'a'}
+                                                 onChange={handleChange}
+                                                 style={{color: '#828282'}}
+                                                 value="a"
+                                                 name="radio-button-demo"
+                                                 inputProps={{'aria-label': 'A'}}/>
                                 </Grid>
                                 <Grid item lg={2}>
-                                    <ButtonColored style={filterButton}>{OperatorCabinetData.operatorInfo.filter}
-                                        <span dangerouslySetInnerHTML={{__html: props.icons.filter}}/>
-                                    </ButtonColored>
+                                    <span
+                                        className={styleFor.mainWrapper_tableControls_filterSearch_padding_title + ' ' + styleFor.title_unprocessed}>
+                                        {OperatorCabinetData.operatorInfo.head.unprocessed.title}
+                                    </span>
+                                </Grid>
+                                <Grid item>
+                                    <StyledRadio checked={selectedValue === 'b'}
+                                                 onChange={handleChange}
+                                                 value="b"
+                                                 style={{color: '#27AE60'}}
+                                                 name="radio-button-demo"
+                                                 inputProps={{'aria-label': 'B'}}/>
                                 </Grid>
                                 <Grid item lg={2}>
-                                    total trackers count: 2000
+                                    <span
+                                        className={styleFor.mainWrapper_tableControls_filterSearch_padding_title + ' ' + styleFor.title_processed}>
+                                        {OperatorCabinetData.operatorInfo.head.processed.title}
+                                    </span>
+                                </Grid>
+                                <Grid item>
+                                    <StyledRadio checked={selectedValue === 'c'}
+                                                 onChange={handleChange}
+                                                 value="c"
+                                                 style={{color: '#F2994A'}}
+                                                 name="radio-button-demo"
+                                                 inputProps={{'aria-label': 'C'}}/>
+                                </Grid>
+                                <Grid item lg={2}>
+                                    <span
+                                        className={styleFor.mainWrapper_tableControls_filterSearch_padding_title + ' ' + styleFor.title_paid}>
+                                        {OperatorCabinetData.operatorInfo.head.paid.title}
+                                    </span>
+                                </Grid>
+                                <Grid item lg={5}
+                                      style={{textAlign: 'right'}}>
+                                    <span
+                                        className={styleFor.mainWrapper_tableControls_filterSearch_padding_title + ' ' + styleFor.title_totalCount}>
+                                        {OperatorCabinetData.operatorInfo.head.tatalTrackersCount}
+                                    </span>
                                 </Grid>
                             </Grid>
                         </div>
@@ -176,43 +214,3 @@ let OperatorCabinet = (props) => {
 };
 
 export default OperatorCabinet;
-
-{/*<div className={styleFor.mainWrapper_tableControls_filterSearch_padding}>*/
-}
-{/*    <div className={styleFor.mainWrapper_filterSearch_wrapper}>*/
-}
-{/*        <ButtonColored style={filterButton}>{OperatorCabinetData.operatorInfo.filter}*/
-}
-{/*            <span dangerouslySetInnerHTML={{__html: props.icons.filter}}/>*/
-}
-{/*        </ButtonColored>*/
-}
-
-{/*        <textarea placeholder={OperatorCabinetData.operatorInfo.search}*/
-}
-{/*                  className={styleFor.contacts_sectionContactWithUs_textarea}/>*/
-}
-
-{/*    </div>*/
-}
-{/*    <div className={styleFor.mainWrapper_tableControls_wrapper}>*/
-}
-{/*        <div className={styleFor.mainWrapper_tableControls_radioButton}>*/
-}
-
-{/*        </div>*/
-}
-{/*        <div className={styleFor.mainWrapper_tableControls_radioButton}>*/
-}
-
-{/*        </div>*/
-}
-{/*        <div className={styleFor.mainWrapper_tableControls_radioButton}>*/
-}
-
-{/*        </div>*/
-}
-{/*    </div>*/
-}
-{/*</div>*/
-}

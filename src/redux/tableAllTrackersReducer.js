@@ -1,6 +1,9 @@
+import SVGjson from '../json/SVGjson';
 const INIT_TABLE_ALL_TRACKERS = 'INIT_TABLE_ALL_TRACKERS';
 
 let initialState = {
+    SVGjson: SVGjson,
+
     columns: [
         {name: 'checkbox', title: 'Checkbox'},
         {name: 'id', title: 'ID'},
@@ -71,7 +74,7 @@ let initialState = {
         },
         {
             checkbox: '1',
-            id: '0',
+            id: '1',
             trackerNumber: '0',
             creationDate: new Date('2018-02-28, 12:06:28').toLocaleString(),
             updateDate: new Date('2018-02-28, 12:06:28').toLocaleString(),
@@ -104,7 +107,7 @@ let initialState = {
         },
         {
             checkbox: '1',
-            id: '0',
+            id: '2',
             trackerNumber: '0',
             creationDate: new Date('2018-01-28, 12:06:28').toLocaleString(),
             updateDate: new Date('2018-01-28, 12:06:28').toLocaleString(),
