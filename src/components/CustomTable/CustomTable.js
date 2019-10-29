@@ -1,7 +1,7 @@
 import React from 'react'
 import {
     SortingState,
-    IntegratedSorting, PagingState, IntegratedPaging, SelectionState,
+    IntegratedSorting, PagingState, IntegratedPaging,
 } from '@devexpress/dx-react-grid';
 import {
     Grid,
@@ -10,8 +10,7 @@ import {
     PagingPanel,
 } from '@devexpress/dx-react-grid-material-ui';
 import {withStyles} from "@material-ui/core";
-import Menu from "@material-ui/core/Menu";
-import MenuItem from "@material-ui/core/MenuItem";
+import Tooltip from '@material-ui/core/Tooltip';
 
 const styles = {
     customCell: {
@@ -21,43 +20,48 @@ const styles = {
     },
     triplePointButton: {
         marginTop: '16px',
+    },
+    tooltipWrapper: {
+        background: 'red',
     }
 };
 
-let CustomTable = (props) => {
-    const triplePoint = props.icons.triplePoint;
-    const [anchorEl, setAnchorEl] = React.useState(null);
+const CustomTooltip = withStyles(theme => ({
+    tooltip: {
+        fontFamily: 'Roboto',
+        lineHeight: '32px',
+        background: '#ffffff',
+        border: '4px solid #f7f7f7',
+        color: 'rgba(0, 0, 0, 0.87)',
+        boxShadow: theme.shadows[1],
+        fontSize: 12,
+    },
+}))(Tooltip);
 
-    const handleClick = event => {
-        setAnchorEl(event.currentTarget);
-    };
+let CustomTable = ({columns, rows, defaultSortingColumn = {}, sortingException = [], pageSize = 1, columnMenuElem, cellOnClick = null, icons, columnWithMenu}) => {
+    const menuIcon = icons.triplePoint;
+    const [defaultSorting] = React.useState(defaultSortingColumn);
 
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
-
-    const [defaultSorting] = React.useState([
-        {columnName: 'id', direction: 'desc'},
-    ]);
-
-    const [sortingStateColumnExtensions] = React.useState([
-        {columnName: 'checkbox', sortingEnabled: false},
-        {columnName: 'edit', sortingEnabled: false},
-    ]);
+    const [sortingStateColumnExtensions] = React.useState(sortingException.map((exception) => {
+        return {
+            columnName: exception.columnName, sortingEnabled: false
+        }
+    }));
 
     const CustomTableCellBase = ({classes, ...restProps}) => {
-        if (restProps.column.name === 'edit') {
+        if (restProps.column.name === columnWithMenu && columnMenuElem) {
             return (
                 <Table.Cell className={classes.customCell} {...restProps} >
-                    <span aria-controls="simple-menu"
-                          aria-haspopup="true"
-                          onClick={handleClick}
-                          dangerouslySetInnerHTML={{__html: triplePoint}}/>
+                    <CustomTooltip title={columnMenuElem} interactive>
+                        <span aria-controls="simple-menu"
+                              aria-haspopup="true"
+                              dangerouslySetInnerHTML={{__html: menuIcon}}/>
+                    </CustomTooltip>
                 </Table.Cell>
             )
         }
         return (
-            <Table.Cell className={classes.customCell} {...restProps} onClick={() => alert(restProps.row.id)}/>
+            <Table.Cell className={classes.customCell} {...restProps} onClick={() => cellOnClick(restProps.row)}/>
         )
     };
 
@@ -71,22 +75,6 @@ let CustomTable = (props) => {
 
     const CustomHeaderCell = withStyles(styles)(CustomHeaderCellBase);
 
-    const tableHeaderCell = (props) => {
-        const {column} = props;
-        return column.name === 'edit' ? (
-            <TableHeaderRow.Cell className={styles.customCell} {...props}/>
-        ) : (
-            <TableHeaderRow.Cell className={styles.customCell} {...props}/>
-        )
-    };
-
-    const TableRow = ({row, ...restProps}) => (
-        <Table.Row
-            {...restProps}
-            onClick={() => alert(row.id)}
-        />
-    );
-
     const CustomTablePagination = props => (
         <PagingPanel.Container {...props} style={{justifyContent: 'center'}}/>
     );
@@ -94,19 +82,19 @@ let CustomTable = (props) => {
     return (
         <div>
             <Grid
-                rows={props.rows}
-                columns={props.columns}
+                rows={rows}
+                columns={columns}
             >
                 <PagingState
                     defaultCurrentPage={0}
-                    pageSize={props.pageSize}
+                    pageSize={pageSize}
                 />
-                <SortingState defaultSorting={defaultSorting}
+                <SortingState defaultSorting={[defaultSorting]}
                               columnExtensions={sortingStateColumnExtensions}/>
                 <IntegratedSorting/>
                 <IntegratedPaging/>
                 <Table
-                       cellComponent={CustomTableCell}/>
+                    cellComponent={CustomTableCell}/>
                 <TableHeaderRow
                     allowSorting
                     showSortingControls

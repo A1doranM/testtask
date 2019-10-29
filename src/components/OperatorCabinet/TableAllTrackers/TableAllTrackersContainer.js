@@ -1,13 +1,11 @@
 import React from 'react';
 import {connect} from "react-redux";
-import CustomTable from "../CustomTable/CustomTable";
-import {Redirect} from "react-router-dom";
+import CustomTable from "../../CustomTable/CustomTable";
 
 class TableAllTrackersContainer extends React.Component {
 
-    redirectToTrackerPage = (row) => {
+    getTrackerId = (row) => {
         alert(row.id);
-        // return <Redirect to={'/tracker/' + row.id}  />
     };
 
     render() {
@@ -16,7 +14,18 @@ class TableAllTrackersContainer extends React.Component {
                          rows={this.props.rows}
                          pageSize={this.props.pageSize}
                          icons={this.props.icons}
-                         onClickRowListener={this.redirectToTrackerPage}/>
+                         cellOnClick={this.getTrackerId}
+                         sortingException={[
+                             {columnName: 'checkbox'},
+                             {columnName: 'edit'},
+                         ]}
+                         defaultSortingColumn={{columnName: 'id', direction: 'asc'}}
+                         columnWithMenu={'edit'}
+                         columnMenuElem={<div>
+                             <div>A</div>
+                             <div>B</div>
+                             <div>C</div>
+                         </div>}/>
         )
     }
 }

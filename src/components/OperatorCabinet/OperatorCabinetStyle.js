@@ -192,9 +192,10 @@ export const styleForOperatorCabinet = makeStyles(theme => ({
     },
 
     mainWrapper_tableControls_filterSearch_padding_textarea: {
-        height: '100%',
+        height: '46px',
         width: '100%',
-        padding: '3 34px 0 20px',
+        verticalAlign: 'center',
+        padding: '0 34px 0 34px',
         background: '#F8FAFB',
         border: '1px solid #D4DBDC',
         boxSizing: 'border-box',
@@ -203,8 +204,9 @@ export const styleForOperatorCabinet = makeStyles(theme => ({
         fontStyle: 'normal',
         fontWeight: 'normal',
         fontSize: '16px',
-        lineHeight: '19px',
+        lineHeight: '46px',
         color: '#BDBDBD',
+        overflow: 'hidden'
     },
 
     mainWrapper_tableControls_filterSearch_padding_title: {

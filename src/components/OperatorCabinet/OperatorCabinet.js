@@ -3,7 +3,7 @@ import {Grid} from "@material-ui/core/es/index";
 import ToolBarContainer from "../Toolbar/ToolBarContainer";
 import {NavLink} from "react-router-dom";
 import {filterButtonStyle, styleForOperatorCabinet} from "./OperatorCabinetStyle";
-import TableAllTrackersContainer from "../TableAllTrackers/TableAllTrackersContainer";
+import TableAllTrackersContainer from "./TableAllTrackers/TableAllTrackersContainer";
 import ButtonColored from "../CustomButtons/ColoredButton/ButtonColored";
 import {StyledRadio} from "../CustomButtons/RadioButton/StyledRadio";
 
@@ -54,7 +54,7 @@ let OperatorCabinet = (props) => {
             <div className={styleFor.mainWrapper}>
                 <Grid container
                       spacing={0}>
-                    <Grid item lg={2}>
+                    <Grid item xs={2} lg={2}>
                         <div className={styleFor.mainWrapper_operatorWrapper}>
                             <div className={styleFor.mainWrapper_operatorWrapper_operatorInfo}>
                                 <div className={styleFor.mainWrapper_operatorWrapper_operatorInfo_padding}>
@@ -137,12 +137,12 @@ let OperatorCabinet = (props) => {
                         <div className={styleFor.mainWrapper_tableControls_filterSearch_padding}>
                             <Grid container
                                   spacing={4}>
-                                <Grid item lg={2}>
+                                <Grid item xs={2} lg={2}>
                                     <ButtonColored style={filterButton}>{OperatorCabinetData.operatorInfo.filter}
                                         <span dangerouslySetInnerHTML={{__html: props.icons.filter}}/>
                                     </ButtonColored>
                                 </Grid>
-                                <Grid item lg={10}>
+                                <Grid item xs={10} lg={10}>
                                    <textarea placeholder={OperatorCabinetData.operatorInfo.search}
                                              className={styleFor.mainWrapper_tableControls_filterSearch_padding_textarea}/>
                                 </Grid>
@@ -160,7 +160,7 @@ let OperatorCabinet = (props) => {
                                                  name="radio-button-demo"
                                                  inputProps={{'aria-label': 'A'}}/>
                                 </Grid>
-                                <Grid item lg={2}>
+                                <Grid item xs={2} lg={2}>
                                     <span
                                         className={styleFor.mainWrapper_tableControls_filterSearch_padding_title + ' ' + styleFor.title_unprocessed}>
                                         {OperatorCabinetData.operatorInfo.head.unprocessed.title}
@@ -174,7 +174,7 @@ let OperatorCabinet = (props) => {
                                                  name="radio-button-demo"
                                                  inputProps={{'aria-label': 'B'}}/>
                                 </Grid>
-                                <Grid item lg={2}>
+                                <Grid item xs={2} lg={2}>
                                     <span
                                         className={styleFor.mainWrapper_tableControls_filterSearch_padding_title + ' ' + styleFor.title_processed}>
                                         {OperatorCabinetData.operatorInfo.head.processed.title}
@@ -188,13 +188,13 @@ let OperatorCabinet = (props) => {
                                                  name="radio-button-demo"
                                                  inputProps={{'aria-label': 'C'}}/>
                                 </Grid>
-                                <Grid item lg={2}>
+                                <Grid item xs={2} lg={2}>
                                     <span
                                         className={styleFor.mainWrapper_tableControls_filterSearch_padding_title + ' ' + styleFor.title_paid}>
                                         {OperatorCabinetData.operatorInfo.head.paid.title}
                                     </span>
                                 </Grid>
-                                <Grid item lg={5}
+                                <Grid item xs={4} lg={5}
                                       style={{textAlign: 'right'}}>
                                     <span
                                         className={styleFor.mainWrapper_tableControls_filterSearch_padding_title + ' ' + styleFor.title_totalCount}>
