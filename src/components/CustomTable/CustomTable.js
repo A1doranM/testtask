@@ -4,10 +4,17 @@ import {
     IntegratedSorting, PagingState, IntegratedPaging,
 } from '@devexpress/dx-react-grid';
 import {
+    SelectionState,
+    IntegratedSelection,
+} from '@devexpress/dx-react-grid';
+import {
+    TableSelection,
+} from '@devexpress/dx-react-grid-material-ui';
+import {
     Grid,
     Table,
     TableHeaderRow,
-    PagingPanel,
+    PagingPanel
 } from '@devexpress/dx-react-grid-material-ui';
 import {withStyles} from "@material-ui/core";
 import Tooltip from '@material-ui/core/Tooltip';
@@ -79,6 +86,8 @@ let CustomTable = ({columns, rows, defaultSortingColumn = {}, sortingException =
         <PagingPanel.Container {...props} style={{justifyContent: 'center'}}/>
     );
 
+    const [selection, setSelection] = React.useState([]);
+
     return (
         <div>
             <Grid
@@ -89,10 +98,15 @@ let CustomTable = ({columns, rows, defaultSortingColumn = {}, sortingException =
                     defaultCurrentPage={0}
                     pageSize={pageSize}
                 />
+                <SelectionState
+                    selection={selection}
+                    onSelectionChange={setSelection}
+                />
                 <SortingState defaultSorting={[defaultSorting]}
                               columnExtensions={sortingStateColumnExtensions}/>
                 <IntegratedSorting/>
                 <IntegratedPaging/>
+                <IntegratedSelection />
                 <Table
                     cellComponent={CustomTableCell}/>
                 <TableHeaderRow
@@ -100,6 +114,7 @@ let CustomTable = ({columns, rows, defaultSortingColumn = {}, sortingException =
                     showSortingControls
                     cellComponent={CustomHeaderCell}
                 />
+                <TableSelection showSelectAll />
                 <PagingPanel containerComponent={CustomTablePagination}/>
             </Grid>
         </div>

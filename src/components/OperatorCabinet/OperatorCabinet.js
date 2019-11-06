@@ -11,10 +11,11 @@ import {StyledRadio} from "../CustomButtons/RadioButton/StyledRadio";
 let OperatorCabinet = (props) => {
     let styleFor = styleForOperatorCabinet();
     let filterButton = filterButtonStyle;
-    const [selectedValue, setSelectedValue] = React.useState('a');
+    const [selectedValue, setSelectedValue] = React.useState(null);
 
     const handleChange = event => {
         setSelectedValue(event.target.value);
+
     };
 
     let OperatorCabinetData = {
@@ -153,12 +154,12 @@ let OperatorCabinet = (props) => {
                                   alignItems={'center'}
                                   spacing={1}>
                                 <Grid item>
-                                    <StyledRadio checked={selectedValue === 'a'}
+                                    <StyledRadio checked={selectedValue === 'unprocessed'}
                                                  onChange={handleChange}
                                                  style={{color: '#828282'}}
-                                                 value="a"
+                                                 value="unprocessed"
                                                  name="radio-button-demo"
-                                                 inputProps={{'aria-label': 'A'}}/>
+                                                 inputProps={{'aria-label': 'unprocessed'}}/>
                                 </Grid>
                                 <Grid item xs={2} lg={2}>
                                     <span
@@ -167,12 +168,12 @@ let OperatorCabinet = (props) => {
                                     </span>
                                 </Grid>
                                 <Grid item>
-                                    <StyledRadio checked={selectedValue === 'b'}
+                                    <StyledRadio checked={selectedValue === 'processed'}
                                                  onChange={handleChange}
-                                                 value="b"
+                                                 value="processed"
                                                  style={{color: '#27AE60'}}
                                                  name="radio-button-demo"
-                                                 inputProps={{'aria-label': 'B'}}/>
+                                                 inputProps={{'aria-label': 'processed'}}/>
                                 </Grid>
                                 <Grid item xs={2} lg={2}>
                                     <span
@@ -181,12 +182,12 @@ let OperatorCabinet = (props) => {
                                     </span>
                                 </Grid>
                                 <Grid item>
-                                    <StyledRadio checked={selectedValue === 'c'}
+                                    <StyledRadio checked={selectedValue === 'paid'}
                                                  onChange={handleChange}
-                                                 value="c"
+                                                 value="paid"
                                                  style={{color: '#F2994A'}}
                                                  name="radio-button-demo"
-                                                 inputProps={{'aria-label': 'C'}}/>
+                                                 inputProps={{'aria-label': 'paid'}}/>
                                 </Grid>
                                 <Grid item xs={2} lg={2}>
                                     <span
@@ -204,7 +205,8 @@ let OperatorCabinet = (props) => {
                             </Grid>
                         </div>
                         <div className={styleFor.mainWrapper_trackersTableWrapper}>
-                            <TableAllTrackersContainer operatorID={props.operatorID} pageSize={2}/>
+                            <TableAllTrackersContainer operatorID={props.operatorID} pageSize={2}
+                                                       filterUnprocessedProcessedPaidValue={selectedValue}/>
                         </div>
                     </Grid>
                 </Grid>

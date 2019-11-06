@@ -5,7 +5,6 @@ let initialState = {
     SVGjson: SVGjson,
 
     columns: [
-        {name: 'checkbox', title: 'Checkbox'},
         {name: 'id', title: 'ID'},
         {name: 'trackerNumber', title: 'Tracker number'},
         {name: 'creationDate', title: 'Date of creation'},
@@ -40,7 +39,6 @@ let initialState = {
 
     rows: [
         {
-            checkbox: '1',
             id: '0',
             trackerNumber: '0',
             creationDate: new Date('2018-09-28, 12:06:28').toLocaleString(),
@@ -48,7 +46,7 @@ let initialState = {
             clearanceDate: new Date('2018-09-28, 12:06:28').toLocaleString(),
             invoiceNumber: '123',
             deliveryDate: new Date('2018-09-28, 12:06:28').toLocaleString(),
-            status: 'asd',
+            status: 'unprocessed',
             carrier: 'Maersk',
             containerNumber: '12312412425',
             totalWeight: '444444',
@@ -73,7 +71,6 @@ let initialState = {
             edit: 'edit'
         },
         {
-            checkbox: '1',
             id: '1',
             trackerNumber: '0',
             creationDate: new Date('2018-02-28, 12:06:28').toLocaleString(),
@@ -81,7 +78,7 @@ let initialState = {
             clearanceDate: new Date('2018-02-28, 12:06:28').toLocaleString(),
             invoiceNumber: '123',
             deliveryDate: new Date('2018-09-28, 12:06:28').toLocaleString(),
-            status: 'asd',
+            status: 'paid',
             carrier: 'Maersk',
             containerNumber: '12312412425',
             totalWeight: '444444',
@@ -106,7 +103,6 @@ let initialState = {
             edit: 'edit'
         },
         {
-            checkbox: '1',
             id: '2',
             trackerNumber: '0',
             creationDate: new Date('2018-01-28, 12:06:28').toLocaleString(),
@@ -114,7 +110,7 @@ let initialState = {
             clearanceDate: new Date('2018-01-28, 12:06:28').toLocaleString(),
             invoiceNumber: '123',
             deliveryDate: new Date('2018-01-28, 12:06:28').toLocaleString(),
-            status: 'asd',
+            status: 'processed',
             carrier: 'Maersk',
             containerNumber: '12312412425',
             totalWeight: '444444',
